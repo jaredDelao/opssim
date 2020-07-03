@@ -1,0 +1,22 @@
+@import './shared/theme/global.scss';
+
+.toolbar-logo {
+
+    height: 100px;
+    padding: 20px 0;
+    justify-content: center;
+
+    &__img {
+        height: 100%;
+    }
+}
+
+
+.toolbar-menu {
+    background-color: $primary;
+    justify-content: center;
+
+    &__button {
+        color: #fff;
+    }
+}

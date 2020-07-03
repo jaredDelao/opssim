@@ -1,3 +1,9 @@
 
+<mat-toolbar class="toolbar-logo">
+    <img class="toolbar-logo__img" src="../assets/images/logo-color.png" alt="laveronesaonline.com">
+</mat-toolbar>
 
+<mat-toolbar class="toolbar-menu">
+    <button class="toolbar-menu__button" mat-button *ngFor="let btn of buttons">{{ btn.name | uppercase }}</button>
+</mat-toolbar>
 <router-outlet></router-outlet>

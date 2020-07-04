@@ -1,0 +1,42 @@
+@import '../../../shared/theme/global.scss';
+
+.principal {
+    margin: 5% auto;
+    justify-content: space-between;
+}
+.information {
+
+    &__text-direction {
+        text-align: center;
+    }
+
+    mat-divider  {
+        border: 1px solid $primary;
+    }
+}
+
+.order {
+    height: 80vh;
+    width: 100%;
+    border: 30px solid transparent;
+    border-image-slice: 20;
+    border-image-width: 20;
+    border-image-outset: 1;
+    border-image: url('../../../../assets/images/banner-vertical.png') 30 round;
+    // background-image: url('../../../../assets/images/banner-vertical.png');
+    // background-position: center;
+    // background-size: cover;
+
+    &__background {
+        width: 100%;
+        transform: rotate(90deg);
+    }
+}
+
+
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+    /*change color of label*/
+    color: $primary !important;
+}

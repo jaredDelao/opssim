@@ -1,4 +1,16 @@
+@import './app/shared/theme/global.scss';
 
+$custom-collection: (
+    warning :  #FFC116,
+    success :  #0a630f,
+    danger:    #c00000,
+    primary: $primary,
+    contrast: (
+        warning :  #000000,
+        success :  #FFFFFF,
+        danger:    #FFFFFF,
+    )
+);
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -12,11 +24,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$front-veronesa-primary: mat-palette($mat-indigo);
-$front-veronesa-accent: mat-palette($mat-pink, A200, A100, A400);
+$front-veronesa-primary: mat-palette($custom-collection, primary);
+$front-veronesa-accent: mat-palette($custom-collection, success);
 
 // The warn palette is optional (defaults to red).
-$front-veronesa-warn: mat-palette($mat-red);
+$front-veronesa-warn: mat-palette($custom-collection, warning);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $front-veronesa-theme: mat-light-theme($front-veronesa-primary, $front-veronesa-accent, $front-veronesa-warn);
@@ -30,3 +42,22 @@ $front-veronesa-theme: mat-light-theme($front-veronesa-primary, $front-veronesa-
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+// Global
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+// Texto color primario
+.text-color {
+    color: $primary;
+}

@@ -1,0 +1,40 @@
+@import '../../../shared/theme/global.scss';
+
+.tabla {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    &__table {
+        width: 80%;
+        border-spacing: 10px;
+
+        tr {
+            th, td {
+                // padding: 0 20px;
+            }
+        }
+
+    }
+
+    &__first-row {
+        line-height: 40px;
+        border-bottom: 2px solid #000;
+    }
+
+    &__first-rows {
+        padding: 10px 0;
+    }
+
+    &__image-product {
+        width: 80px;
+        height: 100px;
+        border: 1px solid #ccc;
+        margin: 10px 0;
+    }
+
+    &__precio {
+        color: $primary;
+    }
+
+}

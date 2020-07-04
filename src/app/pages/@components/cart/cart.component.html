@@ -1,1 +1,53 @@
-<p>cart works!</p>
+<!-- <div class="container">
+
+    <div class="tabla mt-3">
+
+        <table class="tabla__table">
+            <tr class="tabla__first-row">
+                <th>IMAGEN</th>
+                <th>PRODUCTO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>TOTAL</th>
+            </tr>
+            <tr class="tabla__rows">
+
+                <td>
+                    <div class="tabla__image-product">
+                        <img src="" alt="">
+                    </div>
+                </td>
+
+                <td>TOMATIN 12 YEARS OLD</td>
+
+                <td class="tabla__precio">{{ '142' | currency: '$': 'MX'}}</td>
+
+                <td>
+                    <mat-form-field appearance="fill" class="mt-2" *ngIf="!selectNumer">
+                        <mat-label>Cantidad</mat-label>
+                        <mat-select [formControlName]="'controlItem'+i" (selectionChange)="setQuantityItem(item.itemCart, $event.value)" >
+                            <mat-option *ngFor="let count of counter | stockSelect: item.itemCart" [value]="count">{{count}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+
+
+
+            <tr class="tabla__rows">
+
+                <td>
+                    <div class="tabla__image-product">
+                        <img src="" alt="">
+                    </div>
+                </td>
+
+                <td>Griffin</td>
+            </tr>
+         
+        </table>
+
+    </div>
+
+</div> -->

@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductDetailComponent } from './pages/@components/product-detail/product-detail.component';
-import { HomeComponent } from './pages/@components/home/home.component';
-import { CartComponent } from './pages/@components/cart/cart.component';
-import { CheckoutComponent } from './pages/@components/checkout/checkout.component';
+import { AppComponent } from './app.component';
+import { PagesComponent } from './pages/pages.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'product-detail', component: ProductDetailComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'checkout', component: CheckoutComponent},
+  { path: '', component: PagesComponent, children: [
+    { path: '', loadChildren: './pages/@components/not-logged.module#NotLoggedModule' },
+    { path: 'user', loadChildren: './pages/@components-logged/logged.module#LoggedModule' },
+  ]}
 ];
 
 @NgModule({

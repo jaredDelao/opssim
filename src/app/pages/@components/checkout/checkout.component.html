@@ -1,95 +1,197 @@
-<div class="container row principal">
+<div class="container principal">
 
 
-    <div class="information col-6">
+    <div class="information">
         <p class="text-color mb-2"><b>¡Ya casi!</b> Llena los siguientes datos para completar tu pedido</p>
 
         <p class="information__text-direction text-color mt-4"><b>Dirección</b></p>
         <mat-divider></mat-divider>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-3">
 
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Nombre(s)</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Apellido(s)</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Delegación</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Calle</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Número interno</mat-label>
-                    <input placeholder="Núm de departamento, casa, etc." matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Número externo</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Código postal</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Celular</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>E-mail</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Referencias</mat-label>
-                    <input matInput placeholder="¿Tienes alguna referencia específica?">
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>Alguna indicación especial</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-            <div class="form-group mt-2">
-                <mat-form-field>
-                    <mat-label>En caso de no econtrarte ¿Quién puede recibir el pedido?</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
+            <mat-vertical-stepper linear="true" #stepper>
+                <mat-step [stepControl]="formPersonal">
+                    <form [formGroup]="formPersonal">
+
+                        <ng-template matStepLabel>Información personal</ng-template>
+
+                        <!-- <div class="form-group mt-2"> -->
+                        <mat-form-field>
+                            <mat-label>Nombre(s)</mat-label>
+                            <input matInput formControlName="nombre">
+                        </mat-form-field>
+                        <!-- </div> -->
+                        <!-- <div class="form-group mt-2"> -->
+                        <mat-form-field>
+                            <mat-label>Apellido(s)</mat-label>
+                            <input matInput formControlName="apellido">
+                        </mat-form-field>
+                        <!-- </div> -->
+                        <!-- <div class="form-group mt-2"> -->
+                        <mat-form-field>
+                            <mat-label>Celular</mat-label>
+                            <input matInput formControlName="telefono">
+                        </mat-form-field>
+                        <!-- </div> -->
+                        <!-- <div class="form-group mt-2"> -->
+                        <mat-form-field>
+                            <mat-label>E-mail</mat-label>
+                            <input matInput formControlName="email">
+                        </mat-form-field>
+                        <!-- </div> -->
+
+                        <div>
+                            <button mat-button matStepperNext>Siguiente</button>
+                        </div>
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="formDirection">
+                    <form [formGroup]="formDirection">
+                        <ng-template matStepLabel>Dirección</ng-template>
+
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Calle</mat-label>
+                                <input matInput formControlName="calle">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Número interno</mat-label>
+                                <input placeholder="Núm de departamento, casa, etc." matInput
+                                    formControlName="noInterno">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Número externo</mat-label>
+                                <input matInput formControlName="noExterno">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Delegación</mat-label>
+                                <input matInput formControlName="delegacion">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Código postal</mat-label>
+                                <input matInput formControlName="cp">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button mat-button matStepperPrevious>Regresar</button>
+                            <button mat-button matStepperNext>Siguiente</button>
+                        </div>
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="formComplement">
+                    <form [formGroup]="formComplement">
+                        <ng-template matStepLabel>Información complementaria</ng-template>
+
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Referencias</mat-label>
+                                <input matInput placeholder="¿Tienes alguna referencia específica?"
+                                    formControlName="referencia">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>Alguna indicación especial</mat-label>
+                                <input matInput formControlName="indicacion">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group mt-2">
+                            <mat-form-field>
+                                <mat-label>En caso de no econtrarte ¿Quién puede recibir el pedido?</mat-label>
+                                <input matInput formControlName="receptor">
+                            </mat-form-field>
+                        </div>
+
+                        <button mat-button matStepperPrevious>Regresar</button>
+                        <button mat-button (click)="stepper.reset()">Completar</button>
+                    </form>
+                    <div>
+                    </div>
+                </mat-step>
+            </mat-vertical-stepper>
 
         </div>
 
     </div>
 
 
-    <div class="order col-5">
+    <div class="order">
+
+        <div class="order__content">
+
+            <div class="order__title mt-3">
+                <p class="text-color text-center"><b>TU ORDEN</b></p>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <mat-list class="order__list" role="list">
+
+                <mat-list-item role="listitem">
+                    <div class="order__header-list">
+                        <span>Productos</span>
+                        <span>Total</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-list-item role="listitem">
+                    <div class="order__header-list">
+                        <span>Tomatin 12 years old x 2</span>
+                        <span>$142</span>
+                    </div>
+                </mat-list-item>
+
+                <!-- Subtotal -->
+                <mat-list-item role="listitem">
+                    <div class="order__header-list">
+                        <span>Cart subtotal</span>
+                        <span>$384</span>
+                    </div>
+                </mat-list-item>
+                <!-- Envío -->
+                <mat-list-item role="listitem">
+                    <div class="order__header-list">
+                        <span>Costo de envío</span>
+                        <span>Envío gratis</span>
+                    </div>
+                </mat-list-item>
+                <!-- Total -->
+                <mat-list-item class="order__list-item-total" role="listitem">
+                    <div class="order__header-list">
+                        <span>ORDEN TOTAL</span>
+                        <span>$384</span>
+                    </div>
+                </mat-list-item>
+
+                <mat-divider></mat-divider>
+            </mat-list>
+
+            <!-- card -->
+            <div class="order__card-alert">
+                <span class="text-color"> La Veronesa se preocupa por tu seguridad, recuerda que todos nuestros pagos
+                    estan 100% protegidos por el banco.</span>
+            </div>
+
+            <!-- actions -->
+            <div class="order__actions mt-4">
+                <button mat-raised-button color="accent">Regresar al carrito</button>
+                <button mat-raised-button color="primary">Confirmar pedido</button>
+            </div>
+
+
+        </div>
         <!-- <img class="order__background" src="../../../../assets/images/banner-vertical.png" alt=""> -->
     </div>
 
-    
+
 </div>

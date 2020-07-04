@@ -1,19 +1,22 @@
-@import './app/shared/theme/global.scss';
+@import "./app/shared/theme/global.scss";
 
 $custom-collection: (
-    warning :  #FFC116,
-    success :  #0a630f,
-    danger:    #c00000,
-    primary: $primary,
-    contrast: (
-        warning :  #000000,
-        success :  #FFFFFF,
-        danger:    #FFFFFF,
-    )
+  warning: #ffc116,
+  success: #0a630f,
+  danger: #c00000,
+  primary: $primary,
+  extra: $extra,
+  contrast: (
+    warning: #fff,
+    success: #ffffff,
+    danger: #ffffff,
+    primary: #ffffff,
+    extra: #ffffff,
+  ),
 );
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -25,13 +28,17 @@ $custom-collection: (
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $front-veronesa-primary: mat-palette($custom-collection, primary);
-$front-veronesa-accent: mat-palette($custom-collection, success);
+$front-veronesa-accent: mat-palette($custom-collection, extra);
 
 // The warn palette is optional (defaults to red).
 $front-veronesa-warn: mat-palette($custom-collection, warning);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$front-veronesa-theme: mat-light-theme($front-veronesa-primary, $front-veronesa-accent, $front-veronesa-warn);
+$front-veronesa-theme: mat-light-theme(
+  $front-veronesa-primary,
+  $front-veronesa-accent,
+  $front-veronesa-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -40,24 +47,63 @@ $front-veronesa-theme: mat-light-theme($front-veronesa-primary, $front-veronesa-
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-
-
-
+// **************** //
 // Global
+// **************** //
+
+// Fonts
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/font/GothamLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/font/GothamMedium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/font/GothamBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/font/GothamMedium_1.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+* {
+    font-family: 'Montserrat', 'Gotham', Arial;
+}
+
 button {
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 mat-form-field {
-    width: 100%;
+  width: 100%;
 }
 
 // Texto color primario
 .text-color {
-    color: $primary;
+  color: $primary;
 }

@@ -13,8 +13,11 @@ import { GalleryModule } from  '@ngx-gallery/core';
 import { GALLERY_CONFIG } from '@ngx-gallery/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SigninComponent } from 'src/app/shared/@modals/signin/signin.component';
+import { SignupComponent } from 'src/app/shared/@modals/signup/signup.component';
+import { ModalsModule } from 'src/app/shared/@modals/modals.module';
 
-
+const modals = [SigninComponent, SignupComponent];
 @NgModule({
   declarations: [
     HomeComponent,
@@ -29,8 +32,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MaterialModule,
     GalleryModule,
     CarouselModule,
+    ModalsModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     {
       provide: GALLERY_CONFIG,

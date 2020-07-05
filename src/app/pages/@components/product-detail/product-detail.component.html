@@ -1,1 +1,63 @@
-<p>product-detail works!</p>
+<div class="container">
+
+    <!-- Gallery -->
+
+    <gallery [items]="images" thumbPosition="right" ></gallery>
+
+
+    <!-- Descripcion -->
+
+    <div class="description">
+        <!-- producto -->
+        <p class="description__name">Vodka Absolute Mango 750 ml</p>
+        <!-- precio -->
+        <p class="description__price text-color">$144.00</p>
+        <!-- Nota -->
+        <p class="description__alert text-color">Debes ser mayor de edad para ordenar este producto</p>
+        <!-- categoría y rss -->
+        <div class="description__category-rss">
+
+            <div class="description__category">
+                <img src="../../../../assets/images/svg/etiqueta.svg" class="img-category mr-2">
+                <span>MANGO, VODKA, 750</span>
+            </div>
+
+            <div class="description__rss">
+                <span class="mr-2"><b>Compartir:</b></span>
+                <img src="../../../../assets/images/svg/fb.svg" class="img-category mr-2" alt="">
+                <img src="../../../../assets/images/svg/Instagram.svg" class="img-category mr-2" alt="">
+                <img src="../../../../assets/images/svg/Mail.svg" class="img-category" alt="">
+            </div>
+        </div>
+
+        <div class="description__minus">
+            <span class="text-color mr-3">Cantidad</span>
+            <div class="description__minus-box">
+                <button mat-icon-button type="button" data-type="minus" data-field="quant[1]">
+                    <mat-icon>chevron_left</mat-icon>
+                </button>
+                <input type="text" value="1" min="1" max="10" readonly="readonly">
+                <button mat-icon-button type="button" data-type="plus" data-field="quant[1]">
+                    <mat-icon>chevron_right</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="description__actions">
+            <button mat-raised-button color="primary" class="mr-4">Comprar ahora</button>
+            <button mat-raised-button color="primary">Agregar al carrito</button>
+        </div>
+
+        <div class="description__question">
+            <mat-form-field appearance="outline">
+                <mat-label>¿Tienes una pregunta? ¡Escríbenos!</mat-label>
+                <textarea matInput rows="3"></textarea>
+            </mat-form-field>
+
+            <div class="queation__action d-flex justify-content-end">
+                <button mat-raised-button color="primary" disabled="disabled">Enviar pregunta</button>
+            </div>
+        </div>
+    </div>
+
+</div>

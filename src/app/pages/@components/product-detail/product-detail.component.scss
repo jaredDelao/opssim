@@ -1,0 +1,124 @@
+@import '../../../shared/theme/global.scss';
+
+gallery {
+    margin-top: 30px;
+}
+
+.description {
+    margin: 30px 0;
+
+    .img-category {
+        width: 25px;
+    }
+
+    &__name, &__price, &__alert {
+        margin: 30px 0;
+
+        @media screen and (max-width: 500px) {
+            margin: 15px 0
+        }
+    }
+
+    &__price, &__name {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    &__category-rss {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px dotted #ccc;
+        border-bottom: 1px dotted #ccc;
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+    &__rss {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__minus {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin: 30px 0;
+
+        span {
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+        }
+    }
+
+    &__minus-box {
+        width: 140px;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        input {
+            text-align: center;
+            border: none;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__question {
+        width: 100%;
+        margin-top: 10%;
+    }
+}
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+    /*change color of label*/
+    color: $primary !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+// Media queries
+
+@media screen and (max-width: 750px) {
+    .description {
+        &__name, &__price {
+            font-size: 18px;
+        }
+
+        &__alert, &__category-rss {
+            font-size: 12px;
+        }
+
+        &__minus span {
+            font-size: 13px;
+        }
+
+        button {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .description {
+        &__category-rss {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

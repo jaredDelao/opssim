@@ -9,6 +9,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { MaterialModule } from 'src/app/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { GalleryModule } from  '@ngx-gallery/core';
+import { GALLERY_CONFIG } from '@ngx-gallery/core';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotLoggedRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
+    GalleryModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  providers: [
+    {
+      provide: GALLERY_CONFIG,
+      useValue: {
+        dots: true,
+        imageSize: 'cover'
+      }
+    }
+  ]
 })
 export class NotLoggedModule { }

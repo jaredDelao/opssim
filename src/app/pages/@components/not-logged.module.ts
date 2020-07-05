@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GalleryModule } from  '@ngx-gallery/core';
 import { GALLERY_CONFIG } from '@ngx-gallery/core';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { GALLERY_CONFIG } from '@ngx-gallery/core';
     ReactiveFormsModule,
     MaterialModule,
     GalleryModule,
+    CarouselModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [

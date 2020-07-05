@@ -84,6 +84,53 @@ gallery {
 }
 
 
+
+.carousel {
+
+    &__card {
+        position: relative;
+        margin: 10px 15px;
+        // border: 0.1px solid #ccc;
+        padding: 10px;
+
+    }
+
+    &__icons-box {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    &__icons {
+        background-color: rgba($color: #ffffff, $alpha: 0.7);
+        width: 100%;
+        margin-top: 8px;
+        position: relative;
+        // margin-top: -50px;
+    }
+
+    &__images {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+            width: 25px;
+            cursor: pointer;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
     /*change color of label*/
     color: $primary !important;

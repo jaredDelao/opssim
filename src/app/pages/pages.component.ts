@@ -9,7 +9,7 @@ import { SigninComponent } from '../shared/@modals/signin/signin.component';
   template: `
   
     <mat-toolbar class="toolbar-logo">
-        <img class="toolbar-logo__img" src="../assets/images/logo-color.png" alt="laveronesaonline.com">
+        <img class="toolbar-logo__img" src="../assets/images/logo-color.png" alt="laveronesaonline.com" routerLink="/">
     </mat-toolbar>
 
     <mat-toolbar class="toolbar-menu">

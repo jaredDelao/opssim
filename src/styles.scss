@@ -99,7 +99,7 @@ body {
     font-family: 'Montserrat', 'Gotham', Arial;
 }
 
-button, input {
+button, input, img, a {
   &:focus {
     outline: none;
   }

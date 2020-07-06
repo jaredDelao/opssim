@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MatBadgeModule, MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatExpansionModule,
-  MatFormFieldModule, MatIconModule, MatInputModule, MatPaginatorModule, MatSelectModule, MatSidenavModule,
-  MatSlideToggleModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatStepperModule, MatListModule} from '@angular/material';
+  MatFormFieldModule, MatIconModule, MatInputModule, MatPaginatorModule, MatSelectModule, MatSidenavModule, MatMenuModule,
+  MatSlideToggleModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatStepperModule, MatListModule, MatTooltipModule} from '@angular/material';
 
   const modules = [
     MatBadgeModule, MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatExpansionModule,
     MatFormFieldModule, MatIconModule, MatInputModule, MatPaginatorModule, MatSelectModule, MatSidenavModule,
-    MatSlideToggleModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatStepperModule, MatListModule
+    MatSlideToggleModule, MatSnackBarModule, MatTabsModule, MatToolbarModule, MatStepperModule, MatListModule,
+    MatTooltipModule, MatMenuModule
   ]
 @NgModule({
   declarations: [],

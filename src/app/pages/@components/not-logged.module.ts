@@ -9,7 +9,15 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { MaterialModule } from 'src/app/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { GalleryModule } from  '@ngx-gallery/core';
+import { GALLERY_CONFIG } from '@ngx-gallery/core';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SigninComponent } from 'src/app/shared/@modals/signin/signin.component';
+import { SignupComponent } from 'src/app/shared/@modals/signup/signup.component';
+import { ModalsModule } from 'src/app/shared/@modals/modals.module';
+
+const modals = [SigninComponent, SignupComponent];
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,7 +30,19 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotLoggedRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
+    GalleryModule,
+    CarouselModule,
+    ModalsModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  providers: [
+    {
+      provide: GALLERY_CONFIG,
+      useValue: {
+        dots: true,
+        imageSize: 'cover'
+      }
+    }
+  ]
 })
 export class NotLoggedModule { }

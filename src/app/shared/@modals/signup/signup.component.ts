@@ -28,9 +28,9 @@ export class SignupComponent implements OnInit {
   }
 
   get nombre(): AbstractControl { return this.form.get('nombre'); }
-  get apellidos(): AbstractControl { return this.form.get('nombre'); }
-  get correo(): AbstractControl { return this.form.get('nombre'); }
-  get password(): AbstractControl { return this.form.get('nombre'); }
+  get apellidos(): AbstractControl { return this.form.get('apellidos'); }
+  get correo(): AbstractControl { return this.form.get('correo'); }
+  get password(): AbstractControl { return this.form.get('password'); }
 
 
 }

@@ -67,10 +67,16 @@ body {
 // **************** //
 
 // Fonts
-@font-face {
-  font-family: 'Snubnose';
-  src: url("./assets/font/snubnose.otf") format("opentype");
-}
+// @font-face {
+//   font-family: 'Snubnose';
+//   src: url("./assets/font/snubnose.otf") format("opentype");
+// }
+// @font-face {
+//   font-family: 'Snubnose';
+//   font-weight: bold;
+//   src: url("./assets/font/snubnose.otf") format("opentype");
+// }
+
 
 
 // @font-face {
@@ -85,7 +91,7 @@ body {
 // }
 
 
-body {
+* {
     font-family: 'Montserrat', 'Gotham', Arial;
 }
 

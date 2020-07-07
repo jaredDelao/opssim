@@ -1,0 +1,309 @@
+@import "../../../shared/theme/global.scss";
+
+/*
+ $primary: #a6212c;
+ $secondary: #961520;
+ $extra: #bd9954;
+*/
+
+
+.banner1{
+    text-align: center;
+    padding: 3% 5%;
+}
+
+.banner1__cards{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    margin-top: 5%;
+
+}
+
+.banner1__titulo {
+    color: $primary;
+    font-size: 30px;
+}
+
+.banner1__cartas{
+    background-color: $primary;
+    width: 15%;
+    text-align: center;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.banner1__txtCard{
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.banner1__imgCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner1__botton {
+    margin-top: 4%;
+}
+
+.banner1__botton .btn{
+    background-color: $primary;
+    border: $primary;
+    border-radius: 10px
+}
+
+
+.banner2{
+    background: url(../../../../assets/images/banner-about-us-horizontal.png);
+    background-size: 100% 100%;
+   text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner2__logoVeronesa {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.banner2__img{
+    width: 50%;
+}
+
+.banner2__txt {
+    text-align: justify;
+    width: 50%;
+    margin-top: 5%;
+    color: #fff;
+    font-weight: 600;
+}
+
+.banner3{
+    text-align: center;
+}
+
+.banner3__titulo {
+    color: $primary;
+    font-size: 30px;
+}
+
+.banner3__cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner3_fila1{
+    display: flex;
+    justify-content: center;
+}
+
+
+.banner3__carta{
+    width: 20%;
+    filter: grayscale(100%);
+    margin: 1% 1%;
+
+   
+}
+
+.banner3__carta:hover {
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
+.banner3__txtCarta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+
+
+
+
+.banner4{
+    margin: 0 auto;
+    text-align: center;
+    background: url(../../../../assets/images/banner-vertical.png);
+    background-size: 100% 100%;
+    width: 100%;
+    padding: 10%;
+    line-height: 25px;
+    color: #fff;
+}
+
+.banner4__txt{
+    font-size: 25px;
+}
+
+.banner4__txtEspecial{
+    font-size: 40px;
+}
+
+.banner5{
+    text-align: center;
+}
+
+.banner5__titulo{
+    color: $primary;
+    font-size: 25px;
+    margin: 4% 0 3% 0;
+    font-weight: 600;
+}
+
+.banner5__form{
+    display: flex;
+    justify-content: center;
+}
+
+.banner5__formizq{
+    flex-direction: column;
+    margin-right: 5%;
+}
+
+.banner5_btn{
+    margin-bottom: 4%;
+    
+}
+
+.btn__modifer{
+    border-radius: 10px;
+    color: $primary;
+    width: 300px;
+    height: 50px;
+    border-color: $primary;
+}
+
+.btn__modifer1{
+    height: 170px;
+}
+
+.banner5__botton {
+    margin-top: 2%;
+}
+
+.banner5__botton .btn{
+    color: $primary;
+    border-color: $primary;
+    border-radius: 10px
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .banner1__cartas{
+        width: 20%;
+    }
+
+   
+
+}
+
+@media only screen and (max-width: 750px) {
+    .banner1__cards{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .banner1__cartas{
+        width: 40%;
+        margin-bottom: 2%;
+    }
+
+    
+
+    .banner2__logoVeronesa{
+        width: 70%;
+    }
+
+    .banner2__txt{
+        width: 80%;
+    }
+
+    .banner3__carta{
+        width: 30%;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .banner4{
+        line-height: 30px;
+    }
+
+    .banner4__txt{
+        font-size: large;
+    }
+    
+    .banner4__txtEspecial{
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .banner1__botton .btn, .banner5__botton .btn{
+
+        width: 30%;
+    }    
+    
+    .banner2__txt{
+            font-size: small;
+        }
+
+        .banner4__txt{
+            font-size: large;
+        }
+
+        .banner4__txtEspecial {
+            font-size: xx-large;
+        }
+
+
+}
+
+
+@media only screen and (max-width: 450px) {
+    
+    
+    .banner1__cartas{
+        width: 50%;
+        margin-bottom: 2%;
+    }
+
+     
+
+    .banner3_fila1{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner3__carta{
+        width: 50%;
+    }
+
+    .banner5__form{
+        flex-direction: column;
+        padding: 0 2%;
+    }
+
+    .banner5__botton .btn{
+        width: 40%;
+    }
+
+}
+
+
+@media only screen and (max-width: 350px) {
+    .banner1__botton .btn{
+
+        width: 35%;
+    }   
+}

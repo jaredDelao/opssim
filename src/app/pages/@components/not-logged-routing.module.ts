@@ -5,6 +5,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SignupComponent } from 'src/app/shared/@modals/signup/signup.component';
+import { MenuOcasionComponent } from './menu-ocasion/menu-ocasion.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'product-detail', component: ProductDetailComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
+  {path: 'menu-ocasion', component: MenuOcasionComponent},
 ];
 
 @NgModule({

@@ -107,14 +107,14 @@
             
             <div class="banner3_fila1">
 
-            <div class="card bg-dark text-white banner3__carta">
+            <div class="bg-dark text-white banner3__carta">
                 <img src="../../../../assets/images/Bodasy15años_Color.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay banner3__txtCarta">
                   <p class="card-text">Bodas y xv años</p>
                 </div>
               </div>
 
-              <div class="card bg-dark text-white banner3__carta">
+              <div class="bg-dark text-white banner3__carta">
                 <img src="../../../../assets/images/Fiestas_Color.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay banner3__txtCarta">
                   <p class="card-text">Fiestas</p>
@@ -126,14 +126,14 @@
 
             <div class="banner3_fila1">
 
-              <div class="card bg-dark text-white banner3__carta">
+              <div class="bg-dark text-white banner3__carta">
                 <img src="../../../../assets/images/Eventos_Color.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay banner3__txtCarta">
                   <p class="card-text">Eventos</p>
                 </div>
               </div>
 
-              <div class="card bg-dark text-white banner3__carta">
+              <div class="bg-dark text-white banner3__carta">
                 <img src="../../../../assets/images/Cenas_Black_Color.jpg" class="card-img" alt="...">
                 <div class="card-img-overlay banner3__txtCarta">
                   <p class="card-text">Cenas</p>
@@ -143,17 +143,11 @@
             </div>
 
         </div>
-
-
-
-     
   </div>
 
 
 
   <div class="banner4">
-
-
     <div class="banner4__titulo">
         <p class="banner4__txt">
             También damos servicios especializados a 
@@ -180,26 +174,32 @@
 
         <div class="banner5__form">
             <div class="banner5__formizq">
+
                 <div class="banner5_btn">
-                <mat-form-field appearance="fill">
-                    <input class="btn__modifer" matInput placeholder="Nombre">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                </div>
+                <div class="banner5_btn">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput>
                   </mat-form-field>
                 </div>
                 <div class="banner5_btn">
-                  <mat-form-field appearance="fill">
-                    <input class="btn__modifer" matInput placeholder="Teléfono">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Correo</mat-label>
+                    <input matInput required>
                   </mat-form-field>
                 </div>
-                <div class="banner5_btn">
-                  <mat-form-field appearance="fill">
-                    <input class="btn__modifer" matInput placeholder="Correo" [formControl]="email" required>
-                  </mat-form-field>
-                </div>
+
             </div>
 
             <div class="banner5__formder">
-                <mat-form-field appearance="fill">
-                    <textarea class="btn__modifer btn__modifer1" matInput placeholder="Pregunta"></textarea>
+                <mat-form-field appearance="outline">
+                    <mat-label>Pregunta</mat-label>
+                    <textarea rows="11" matInput></textarea>
                   </mat-form-field>
             </div>
         </div>

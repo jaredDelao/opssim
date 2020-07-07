@@ -169,38 +169,19 @@
 .banner5__form{
     display: flex;
     justify-content: center;
+    width: 600px;
+    margin: 0 auto;
 }
 
 .banner5__formizq{
     flex-direction: column;
-    margin-right: 5%;
+    margin-right: 3%;
+    width: 50%;
 }
-
-.banner5_btn{
-    margin-bottom: 4%;
-    
-}
-
-.btn__modifer{
-    border-radius: 10px;
-    color: $primary;
-    width: 300px;
-    height: 50px;
-    border-color: $primary;
-}
-
-.btn__modifer1{
-    height: 170px;
-}
-
-.banner5__botton {
-    margin-top: 2%;
-}
-
-.banner5__botton .btn{
-    color: $primary;
-    border-color: $primary;
-    border-radius: 10px
+.banner5__formder{
+    flex-direction: column;
+    margin-right: 3%;
+    width: 50%;
 }
 
 .btn-outline-primary:hover{

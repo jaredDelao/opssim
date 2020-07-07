@@ -14,7 +14,7 @@
 
 .banner1{
     text-align: center;
-    padding: 3% 5%;
+    padding: 50px 5%;
 
     &__cards{
         display: flex;
@@ -29,9 +29,9 @@
 
     &__cartas{
         background-color: $primary;
-        width: 15%;
+        width: 17%;
         text-align: center;
-        padding: 1%;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -39,24 +39,24 @@
 
     &__txtCard{
         line-height: 20px;
-        font-weight: 600;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     &__imgCards{
         display: flex;
         justify-content: center;
         align-items: center;
+
+        img {
+            width: 50px;
+        }
     }
 
     &__botton {
         margin-top: 4%;
     }
 
-    &__botton .btn{
-        background-color: $primary;
-        border: $primary;
-        border-radius: 10px
-    }
 }
 
 
@@ -92,7 +92,7 @@
 
 .banner3{
     text-align: center;
-    padding: 3% 0;
+    padding: 50px 0;
 
     &__titulo {
         color: $primary;
@@ -173,6 +173,12 @@
         flex-direction: column;
         margin-right: 3%;
         width: 50%;
+    }
+
+    &__btn-contacto {
+        border: 1px solid $primary;
+        background-color: #fff;
+        color: $primary;
     }
 }
 
@@ -303,6 +309,14 @@
     }
 
 }
+@media only screen and (max-width: 475px) {
+    
+    .banner1__cartas{
+        width: 60%;
+        margin-bottom: 2%;
+        font-size: 12px;
+    }
+}
 
 
 @media only screen and (max-width: 350px) {
@@ -310,4 +324,12 @@
 
         width: 35%;
     }   
+}
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-label {
+    /*change color of label*/
+    color: $primary !important;
+    font-size: 14px;
+    font-weight: 500;
 }

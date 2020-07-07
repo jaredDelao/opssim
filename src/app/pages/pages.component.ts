@@ -34,7 +34,7 @@ export class PagesComponent {
   buttons: Array<any> = [
     { path: '/productos', name: 'Productos', link: '/product-detail'},
     { path: '/paquetes', name: 'Paquetes', link: '/'},
-    { path: '/ocasion', name: 'Para la ocasión', link: '/'},
+    { path: '/ocasion', name: 'Para la ocasión', link: '/menu-ocasion'},
     { path: '/contacto', name: 'Contactanos', link: '/'},
   ];
 

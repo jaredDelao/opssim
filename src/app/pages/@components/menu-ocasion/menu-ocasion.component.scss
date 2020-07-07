@@ -20,6 +20,7 @@
 .ocasion__primeraFila, .ocasion__segundaFila{
    display: flex;
    justify-content: space-around;
+   margin-bottom: 10%;
 }
 
 
@@ -27,7 +28,7 @@
     width: 45%;
     border: none;
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     color: $primary;
 }
 
@@ -41,24 +42,22 @@
 }
 
 .ocasion__txt{
-    padding: 0 25%;
+    padding: 0 21%;
     margin: 5% 0;
     font-size: medium;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 760px) {
+    .ocasion__txt{
+        font-size: 12px;
+    }
 }
 
 
 @media only screen and (max-width: 600px) {
     .ocasion__carta{
         font-size: 20px;
-    }
-
-}
-
-@media only screen and (max-width: 500px) {
-    .ocasion__carta{
-        font-size: 15px;
-        width: 80%;
     }
 
     .ocasion__primeraFila, .ocasion__segundaFila{
@@ -68,15 +67,31 @@
 
 }
 
+@media only screen and (max-width: 570px) {
+    .ocasion__txt{
+        font-size: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .ocasion__carta{
+        font-size: 15px;
+        width: 80%;
+    }
+
+    
+
+}
+
 
 
 @media only screen and (max-width: 450px) {
     .ocasion__titulo{
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .ocasion__txt{
-        font-size: 15px;
         padding: 0 15%;
     }
 }

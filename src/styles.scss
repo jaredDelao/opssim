@@ -68,34 +68,24 @@ body {
 
 // Fonts
 @font-face {
-  font-family: "Gotham";
-  src: url("./assets/font/GothamLight.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
+  font-family: 'Snubnose';
+  src: url("./assets/font/snubnose.otf") format("opentype");
 }
 
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/font/GothamMedium.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/font/GothamBold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: GraublauWeb;
+//   src: url("path/GraublauWeb.otf") format("opentype");
+// }
 
-@font-face {
-  font-family: "Gotham";
-  src: url("./assets/font/GothamMedium_1.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: GraublauWeb;
+//   font-weight: bold;
+//   src: url("path/GraublauWebBold.otf") format("opentype");
+// }
 
-* {
+
+body {
     font-family: 'Montserrat', 'Gotham', Arial;
 }
 

@@ -16,6 +16,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SigninComponent } from 'src/app/shared/@modals/signin/signin.component';
 import { SignupComponent } from 'src/app/shared/@modals/signup/signup.component';
 import { ModalsModule } from 'src/app/shared/@modals/modals.module';
+import { MenuOcasionComponent } from './menu-ocasion/menu-ocasion.component';
 
 const modals = [SigninComponent, SignupComponent];
 @NgModule({
@@ -24,6 +25,7 @@ const modals = [SigninComponent, SignupComponent];
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
+    MenuOcasionComponent,
   ],
   imports: [
     CommonModule,

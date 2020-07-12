@@ -1,22 +1,16 @@
 @import './shared/theme/global.scss';
 
-.toolbar-logo {
+.menu {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-    height: 100px;
-    padding: 20px 0;
-    justify-content: center;
-
-    &__img {
-        height: 100%;
+    .btn-close {
+        margin-bottom: 10px;
     }
-}
-
-
-.toolbar-menu {
-    background-color: $primary;
-    justify-content: center;
 
     &__button {
-        color: #fff;
+
     }
 }

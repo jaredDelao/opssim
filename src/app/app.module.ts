@@ -11,8 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StockSelectPipe } from './shared/pipes/stock-select.pipe';
 import { SigninComponent } from './shared/@modals/signin/signin.component';
 import { SignupComponent } from './shared/@modals/signup/signup.component';
-import { PagesComponent } from './pages/pages.component';
 import { ModalsModule } from './shared/@modals/modals.module';
+import { PagesComponent } from './pages/pages.component';
 
 const pipes = [StockSelectPipe];
 const modals = [SigninComponent, SignupComponent];
@@ -20,7 +20,6 @@ const modals = [SigninComponent, SignupComponent];
   declarations: [
     AppComponent,
     PagesComponent,
-    // ...modals,
     ...pipes,
   ],
   imports: [
@@ -31,7 +30,6 @@ const modals = [SigninComponent, SignupComponent];
     MaterialModule,
     ModalsModule,
   ],
-  // entryComponents: [...modals],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

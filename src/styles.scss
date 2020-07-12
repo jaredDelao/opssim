@@ -40,6 +40,24 @@ $front-veronesa-theme: mat-light-theme(
   $front-veronesa-warn
 );
 
+@mixin mix-app-theme($front-veronesa-theme) {
+  $primary: map-get($front-veronesa-theme, primary);
+  $accent: map-get($front-veronesa-theme, accent);
+
+  .mat-button-toggle {
+    background-color: #ccc;
+    color: #222;
+  }
+  
+  .mat-button-toggle-checked {
+    background-color: mat-color($primary) !important;
+    color: mat-color($primary, default-contrast) !important;
+  }
+}
+
+// Include the mixin
+@include mix-app-theme($front-veronesa-theme);
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.

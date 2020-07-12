@@ -5,11 +5,17 @@ import { LoggedRoutingModule } from './logged-routing.module';
 import { AccountMenuComponent } from './account-menu/account-menu.component';
 import { MaterialModule } from 'src/app/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BillsComponent } from './bills/bills.component';
+import { AddBillComponent } from './add-bill/add-bill.component';
+import { UppercaseDirective } from 'src/app/shared/directives/uppercase.directive';
 
-
+const components = [AccountMenuComponent, BillsComponent];
+const directives = [UppercaseDirective];
 @NgModule({
   declarations: [
-    AccountMenuComponent
+    ...components,
+    ...directives,
+    AddBillComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     ReactiveFormsModule,
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  exports: [
+    // ...components
+  ],
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 })
 export class LoggedModule { }

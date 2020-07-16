@@ -44,7 +44,7 @@ import { SidenavService } from '../services/sidenav.service';
 
         <div class="toolbar-menu-responsive__actions">
           <img matRipple src="../../assets/images/svg/user.svg" [matMenuTriggerFor]="beforeMenu">
-          <img matRipple src="../../assets/images/svg/cart-white.svg">
+          <img matRipple src="../../assets/images/svg/cart-white.svg" [routerLink]="['/checkout']">
 
           <mat-menu #beforeMenu="matMenu" xPosition="before">
             <button mat-menu-item (click)="openModal('signIn')">Iniciar sesión</button>

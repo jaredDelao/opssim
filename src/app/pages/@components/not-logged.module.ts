@@ -19,6 +19,7 @@ import { ModalsModule } from 'src/app/shared/@modals/modals.module';
 import { MenuOcasionComponent } from './menu-ocasion/menu-ocasion.component';
 import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const modals = [SigninComponent, SignupComponent];
 @NgModule({
@@ -28,7 +29,6 @@ const modals = [SigninComponent, SignupComponent];
     CartComponent,
     CheckoutComponent,
     MenuOcasionComponent,
-    StockSelectPipe,
   ],
   imports: [
     CommonModule,
@@ -38,6 +38,7 @@ const modals = [SigninComponent, SignupComponent];
     GalleryModule,
     CarouselModule,
     ModalsModule,
+    SharedModule,
   ],
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [

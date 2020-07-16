@@ -14,14 +14,14 @@ import { SignupComponent } from './shared/@modals/signup/signup.component';
 import { ModalsModule } from './shared/@modals/modals.module';
 import { PagesComponent } from './pages/pages.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
-const pipes = [];
+const pipes = [StockSelectPipe];
 const modals = [SigninComponent, SignupComponent];
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
-    ...pipes,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,7 @@ const modals = [SigninComponent, SignupComponent];
     MaterialModule,
     ModalsModule,
   ],
-  providers: [],
+  providers: [...pipes],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 

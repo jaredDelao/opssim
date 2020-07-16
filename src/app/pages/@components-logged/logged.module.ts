@@ -9,9 +9,12 @@ import { BillsComponent } from './bills/bills.component';
 import { AddBillComponent } from './add-bill/add-bill.component';
 import { UppercaseDirective } from 'src/app/shared/directives/uppercase.directive';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const components = [AccountMenuComponent, BillsComponent];
 const directives = [UppercaseDirective];
+// const pipes = [StockSelectPipe];
 @NgModule({
   declarations: [
     ...components,
@@ -24,6 +27,7 @@ const directives = [UppercaseDirective];
     LoggedRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [
     // ...components

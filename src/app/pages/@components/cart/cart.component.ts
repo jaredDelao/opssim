@@ -12,15 +12,33 @@ export class CartComponent implements OnInit {
 
   form: FormGroup;
 
-  counter: Array<number> = [];
+  counter: Array<number> = [1,2,3,4];
   itemsCart: Array<ItemCart> | Array<any> = [];
   selectNumer: boolean = false;
+
+  itemsDummy = [
+    {name: 'Vodka Absolute Mango', category: 'Vodka', price: 100, stock: 3, description: 'description', img: [
+      '../../../../assets/images/demo/botella1.jpg' 
+    ] },
+    {name: 'Rose Wines 750 ml', category: 'Tequila', price: 100, stock: 3, description: 'description', img: [
+      '../../../../assets/images/demo/botella2.jpg'
+    ] },
+    {name: 'Lagar de Proventus', category: 'Vino tinto', price: 100, stock: 3, description: 'description', img: [
+      '../../../../assets/images/demo/botella3.jpg'
+    ] },
+    {name: 'Jack Daniels', category: 'Whiskey', price: 100, stock: 3, description: 'description', img: [
+      '../../../../assets/images/demo/botella4.jpg'
+    ] },
+  ]
+
+
 
 
   constructor(private fb: FormBuilder, private cartService: CartService) { }
 
   ngOnInit() {
     this.formInit();
+    this.getItems();
   }
 
 
@@ -41,16 +59,17 @@ export class CartComponent implements OnInit {
   }
 
   getItems() {
-    this.cartService.getItems().subscribe((items: Array<ItemCart>) => {
-      this.itemsCart = items;
+    // this.cartService.getItems().subscribe((items: Array<any>) => {
+      // this.itemsCart = items;
 
-      const count = items.length;
+      // const count = items.length;
+      const count = this.itemsDummy.length;
       // return;
       if (count == 0) return false;
       for(let i = 0; i < count; i++) {
-        this.addSelectToForm(i, items[i].quantity);
+        this.addSelectToForm(i, this.itemsDummy[i].stock);
       }
-    })
+    // })
   }
 
   setQuantityItem(product: Product, quantity: number) {

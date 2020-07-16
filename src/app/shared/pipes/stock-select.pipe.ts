@@ -5,9 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StockSelectPipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
+  transform(value: any, stock: number): any {
 
-    let stock: number = args[0].stock;
     let countArry = [];
 
     for(let i=1; i<=stock; i++) {

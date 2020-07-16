@@ -13,8 +13,9 @@ import { SigninComponent } from './shared/@modals/signin/signin.component';
 import { SignupComponent } from './shared/@modals/signup/signup.component';
 import { ModalsModule } from './shared/@modals/modals.module';
 import { PagesComponent } from './pages/pages.component';
+import { HttpClientModule } from '@angular/common/http';
 
-const pipes = [StockSelectPipe];
+const pipes = [];
 const modals = [SigninComponent, SignupComponent];
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ const modals = [SigninComponent, SignupComponent];
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,

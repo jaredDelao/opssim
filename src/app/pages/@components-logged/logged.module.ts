@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BillsComponent } from './bills/bills.component';
 import { AddBillComponent } from './add-bill/add-bill.component';
 import { UppercaseDirective } from 'src/app/shared/directives/uppercase.directive';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const components = [AccountMenuComponent, BillsComponent];
 const directives = [UppercaseDirective];
@@ -15,7 +16,8 @@ const directives = [UppercaseDirective];
   declarations: [
     ...components,
     ...directives,
-    AddBillComponent
+    AddBillComponent,
+    WishlistComponent
   ],
   imports: [
     CommonModule,

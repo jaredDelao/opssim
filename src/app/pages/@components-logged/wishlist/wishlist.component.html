@@ -1,1 +1,102 @@
-<p>wishlist works!</p>
+<div class="content-p">
+
+    <div class="tabla mt-3" [formGroup]="form">
+
+        <table class="tabla__table">
+            <tr class="tabla__first-row">
+                <th>IMAGEN</th>
+                <th>PRODUCTO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>TOTAL</th>
+            </tr>
+            <tr class="tabla__rows" *ngFor="let item of itemsDummy; let i = index">
+
+                <td>
+                    <div class="tabla__image-product">
+                        <img [src]="item.img[0]" alt="">
+                    </div>
+                </td>
+
+                <td class="tabla__description-row">
+                    <p>
+                        {{item.name}}
+                    </p>
+                    <p class="text-color">{{item.category}}</p>
+                </td>
+
+                <td class="tabla__precio">{{ '142' | currency: '$': '$'}}</td>
+
+                <td>
+                    <!-- <mat-form-field appearance="fill" class="mt-2 tabla__select-precio" *ngIf="!selectNumer"> -->
+                    <!-- <mat-label>Cantidad</mat-label> -->
+                    <!-- <mat-select [formControlName]="'controlItem'+i" (selectionChange)="setQuantityItem(item.itemCart, $event.value)" > -->
+                    <!-- <mat-select [formControlName]="'controlItem'+i" >
+                            <mat-option *ngFor="let count of counter | stockSelect: item.stock" [value]="count">{{count}}</mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+
+                    <div class="form-group tabla__select-precio">
+                        <!-- <label for="sel1">Select :</label> -->
+                        <select class="form-control" [formControlName]="'controlItem'+i">
+                            <option *ngFor="let count of counter | stockSelect: item.stock" [value]="count">{{count}}
+                            </option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <div class="box-cart">
+            <div class="box-cart__items-wrapper">
+                <!-- items-list -->
+                <div class="box-cart__item-wrapper" *ngFor="let item of itemsDummy; let i = index">
+                    <div class="box-cart__image-product">
+                        <img [src]="item.img[0]" alt="">
+                    </div>
+
+                    <div class="box-cart__description">
+                        <div class="text mb-2">
+                            <p class="name">{{item.name}}</p>
+                            <span>{{item.category}}</span>
+                        </div>
+                        <div class="stock">
+                            <!-- <span class="mb-2">{{item.itemCart.available ? 'Disponible' : 'No Disponible'}}</span> -->
+                            <div class="cantidad-content content mt-2">
+
+                                <div class="form-group tabla__select-precio">
+                                    <!-- <label for="sel1">Select :</label> -->
+                                    <select class="form-control" [formControlName]="'controlItem'+i">
+                                        <option *ngFor="let count of counter | stockSelect: item.stock" [value]="count">
+                                            {{count}}</option>
+                                    </select>
+                                </div>
+
+                                <div class="delete-text">
+                                    <span>Eliminar</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- right total card -->
+            <div class="box-cart__total-wrapper">
+                <div class="box-total">
+                    <div class="subtotal">
+                        <span>Subtotal ({{itemsDummy.length}} productos): $1,200</span>
+                        <button mat-raised-button color="primary">Proceder al pago</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

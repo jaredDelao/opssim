@@ -15,6 +15,16 @@
     align-items: center;
 }
 
+.miCuenta__titulo{
+    font-size: xx-large;
+    margin-top: 5%;
+    color: $primary;
+}
+
+.miCuenta__selector{
+    text-decoration: none;
+}
+
 .miCuenta__primeraFila,
 .miCuenta__segundaFila,
 .miCuenta__terceraFila{
@@ -39,4 +49,35 @@
 
 .miCuenta__txt{
     color: $primary;
+    margin-top: 3%;
+    font-size: 22px;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .miCuenta__primeraFila,
+    .miCuenta__segundaFila,
+    .miCuenta__terceraFila{
+        flex-direction: column;
+    }
+
+    .miCuenta__txt{
+        font-size: x-large;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 450px) {
+
+    .miCuenta__titulo{
+        font-size: 22px;
+    }
+
+
+
+    .miCuenta__txt{
+        font-size: 10px;
+    }
 }

@@ -33,12 +33,12 @@
     display: flex;
     justify-content: flex-end;
     width: 20%;
-
-    img {
-      width: 30px;
-      margin: 5px;
-      cursor: pointer;
-    }
+    position: relative;
+  }
+  &__img-icon {
+    width: 30px;
+    margin: 5px;
+    cursor: pointer;
   }
 }
 
@@ -70,6 +70,112 @@
     }
   }
 }
+
+.menuCart {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+  &__content {
+    width: 300px;
+    // height: 100px;
+    position: absolute;
+    top: 53px;
+    right: 0;
+    box-shadow: 0 0 10px #222;
+    background-color: #FFFFFF;
+    z-index: 2;
+    display: none;
+    padding: 15px;
+  }
+
+  &__box-cart {
+    width: 100%;
+  }
+
+  &:hover &__content {
+    display: block;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    // border: 1px solid black;
+    height: 80px;
+    padding: 5px 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+
+  }
+  &__image {
+    width: 60px;
+    margin-right: 18px;
+    height: 100%;
+  }
+  &__img {
+    height: 100%;
+  }
+  &__info {
+    width: 130px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  &__delete {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    mat-icon {
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    line-height: 16px;
+    span {
+      white-space: break-spaces;
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: row;
+    font-size: 12;
+    justify-content: flex-start;
+  }
+  &__quantity, &__price {
+    font-size: 12px;
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    span {
+      font-family: "Alone" !important;
+      font-size: 26px;
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // margin-top: 10px;
+    button {
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 50px;
+    }
+  }
+}
+
 
 
 @media screen and (max-width: 800px) {

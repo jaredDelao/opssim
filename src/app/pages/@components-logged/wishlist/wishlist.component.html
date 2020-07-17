@@ -1,14 +1,31 @@
 <div class="content-p">
 
+   <div class="miWish__titulo">
+        <p>MI WISHLIST</p>
+    </div>
+
+    <div class="miWish-Cont">
+        <p class="miWish-Cont__txt">
+            Productos a los que le diste 
+        </p>
+        <div class="miWish-Cont__imgCora">
+        <img src="../../../../assets/images/svg/favorito.svg" alt="" class="miWish-Cont__imgCora__img">
+         </div>
+
+    </div>
+
     <div class="tabla mt-3" [formGroup]="form">
 
         <table class="tabla__table">
+                   
             <tr class="tabla__first-row">
                 <th>IMAGEN</th>
                 <th>PRODUCTO</th>
+                <th> </th>
                 <th>PRECIO</th>
                 <th>CANTIDAD</th>
                 <th>TOTAL</th>
+                <th>   </th>
             </tr>
             <tr class="tabla__rows" *ngFor="let item of itemsDummy; let i = index">
 
@@ -23,6 +40,14 @@
                         {{item.name}}
                     </p>
                     <p class="text-color">{{item.category}}</p>
+                </td>
+
+                <td class="tabla-celdaImg">
+                    <div class="tabla-cart">
+                        <a href="#!">
+                        <img class="tabla-cart__imageCart" src="../../../../assets/images/png/iconos/cart.png" alt="">
+                        </a>
+                    </div>
                 </td>
 
                 <td class="tabla__precio">{{ '142' | currency: '$': '$'}}</td>
@@ -42,6 +67,16 @@
                             <option *ngFor="let count of counter | stockSelect: item.stock" [value]="count">{{count}}
                             </option>
                         </select>
+                    </div>
+                </td>
+
+                <td></td>
+
+                <td class="tabla-celdaImg">
+                    <div class="tabla-cancel">
+                        <a href="#!">
+                        <img class="tabla-cancel__imageCancel" src="../../../../assets/images/png/iconos/tache.png" alt="">
+                        </a>
                     </div>
                 </td>
             </tr>
@@ -97,6 +132,13 @@
 
         </div>
 
+    </div>
+
+
+    <div class="miWish-contentBotton">
+        <button mat-raised-button type="button" color="extra" class="miWish-contentBotton__boton1">Seguir comprando</button>
+
+        <button mat-raised-button type="button" color="primary">Agregar al carrito</button>
     </div>
 
 </div>

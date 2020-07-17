@@ -16,9 +16,12 @@
 }
 
 .miCuenta__titulo{
-    font-size: xx-large;
+    font-size: 70px;
     margin-top: 5%;
     color: $primary;
+    & p{
+        font-family: "Alone";
+    }
 }
 
 .miCuenta__selector{
@@ -44,7 +47,7 @@
 }
 
 .miCuenta__img{
-    width: 70%;
+    width: 100px;
 }
 
 .miCuenta__txt{
@@ -72,7 +75,7 @@
 @media only screen and (max-width: 450px) {
 
     .miCuenta__titulo{
-        font-size: 22px;
+        font-size: 50px;
     }
 
 

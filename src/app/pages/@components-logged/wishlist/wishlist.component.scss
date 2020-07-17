@@ -245,10 +245,14 @@
 
 
 .miWish__titulo{
-    font-size: xx-large;
+    font-size: 70px;
     margin: 5% 0;
     color: $primary;
     text-align: center;
+
+    & p{
+        font-family: "Alone";
+    }
 }
 
 .miWish-Cont{
@@ -309,7 +313,7 @@
 @media screen and (max-width: 550px) {
 
     .miWish__titulo{
-        font-size: 22px;
+        font-size: 50px;
     }
 
     .miWish-contentBotton{

@@ -9,6 +9,11 @@
                 <th>PRECIO</th>
                 <th>CANTIDAD</th>
                 <th>TOTAL</th>
+                <th>
+                    <button mat-icon-button type="button" style="vertical-align: middle;">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </th>
             </tr>
             <tr class="tabla__rows" *ngFor="let item of itemsDummy; let i = index">
 
@@ -25,7 +30,7 @@
                     <p class="text-color">{{item.category}}</p>
                 </td>
 
-                <td class="tabla__precio">{{ '142' | currency: '$': '$'}}</td>
+                <td class="tabla__precio">{{ item.price | currency}}</td>
 
                 <td>
                     <!-- <mat-form-field appearance="fill" class="mt-2 tabla__select-precio" *ngIf="!selectNumer"> -->
@@ -44,6 +49,15 @@
                         </select>
                     </div>
                 </td>
+
+                <td class="tabla__total">{{ item.price | currency}}</td>
+
+                <td class="tabla__delete">
+                    <button mat-icon-button type="button">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </td>
+
             </tr>
         </table>
 
@@ -95,6 +109,37 @@
 
             </div>
 
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <div class="actions__seguir-comprando">
+            <button mat-raised-button color="primary">Seguir comprando</button>
+        </div>
+
+        <div class="actions__total">
+            <span>COMPRA TOTAL</span>
+
+            <table class="actions__table">
+                <!-- <tr>
+                    <th></th>
+                    <th></th>
+                </tr> -->
+                <tr>
+                    <td>Subtotal:</td>
+                    <td class="text-color">{{1200 | currency}}</td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td class="text-color">{{1200 | currency}}</td>
+                </tr>
+            </table>
+
+            <!-- boton pago -->
+            <div class="actions__finalizar-compra">
+                <button mat-raised-button color="primary">PROCEDER AL PAGO</button>
+            </div>
         </div>
 
     </div>

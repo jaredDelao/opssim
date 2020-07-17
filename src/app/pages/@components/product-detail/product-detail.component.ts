@@ -38,8 +38,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   slidesStore: any[] = [
-    { id: '1', src: '../../../../assets/images/demo/botella1.jpg' },
-    { id: '2', src: '../../../../assets/images/demo/botella2.jpg' },
+    { id: '1', src: '../../../../assets/images/demo/DonPedroGranRva600x800.jpg' },
+    { id: '2', src: '../../../../assets/images/demo/azteca_oro_600x800.jpg' },
     { id: '3', src: '../../../../assets/images/demo/botella3.jpg' },
     { id: '4', src: '../../../../assets/images/demo/botella4.jpg' },
     { id: '5', src: '../../../../assets/images/demo/botella1.jpg' },
@@ -58,8 +58,8 @@ export class ProductDetailComponent implements OnInit {
 
   setImages() {
     this.images = [
-      new ImageItem({ src: '../../../../assets/images/demo/botella1.jpg', thumb: '../../../../assets/images/demo/botella1.jpg' }),
-      new ImageItem({ src: '../../../../assets/images/demo/botella2.jpg', thumb: '../../../../assets/images/demo/botella2.jpg' }),
+      new ImageItem({ src: '../../../../assets/images/demo/DonPedroGranRva600x800.jpg', thumb: '../../../../assets/images/demo/DonPedroGranRva600x800.jpg' }),
+      new ImageItem({ src: '../../../../assets/images/demo/azteca_oro_600x800.jpg', thumb: '../../../../assets/images/demo/azteca_oro_600x800.jpg' }),
       new ImageItem({ src: '../../../../assets/images/demo/botella3.jpg', thumb: '../../../../assets/images/demo/botella3.jpg' }),
       new ImageItem({ src: '../../../../assets/images/demo/botella4.jpg', thumb: '../../../../assets/images/demo/botella4.jpg' }),
     ];

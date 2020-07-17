@@ -23,19 +23,20 @@ export class PagesComponent implements AfterViewInit {
   ];
 
   itemsDummy = [
-    {name: 'Vodka Absolute Mango', category: 'Vodka', price: 100, stock: 3, description: 'description', img: [
-      '../../assets/images/demo/botella1.jpg' 
+    {name: 'Don Pedro', category: 'Brandy', price: 100, stock: 1, description: 'description', img: [
+      '../../../../assets/images/demo/DonPedroGranRva600x800.jpg' 
     ] },
-    {name: 'Rose Wines 750 ml', category: 'Tequila', price: 100, stock: 3, description: 'description', img: [
-      '../../assets/images/demo/botella2.jpg'
+    {name: 'Azteca de Oro', category: 'Brandy', price: 200, stock: 1, description: 'description', img: [
+      '../../../../assets/images/demo/azteca_oro_600x800.jpg'
     ] },
-    {name: 'Lagar de Proventus', category: 'Vino tinto', price: 100, stock: 3, description: 'description', img: [
-      '../../assets/images/demo/botella3.jpg'
+    {name: 'Lagar de Proventus', category: 'Vino tinto', price: 600, stock: 1, description: 'description', img: [
+      '../../../../assets/images/demo/botella3.jpg'
     ] },
-    {name: 'Jack Daniels', category: 'Whiskey', price: 100, stock: 3, description: 'description', img: [
-      '../../assets/images/demo/botella4.jpg'
+    {name: 'Jack Daniels', category: 'Whiskey', price: 300, stock: 1, description: 'description', img: [
+      '../../../../assets/images/demo/botella4.jpg'
     ] },
   ]
+
 
   constructor(public dialog: MatDialog, private _sidenavService: SidenavService) {}
 

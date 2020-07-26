@@ -386,5 +386,45 @@
     font-weight: 500;
 }
 
+/* CONTERNEDOR DE CARTAS*/
 
+.ocasion__contenedorDeCartas {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+
+
+
+.ocasion__primeraFila, .ocasion__segundaFila{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+ }
+ 
+ 
+ .ocasion__carta{
+     width: 320px;
+     border: none;
+     text-align: center;
+     font-size: 22px;
+     color: $primary;
+     margin: 0 1%
+ 
+ }
+
+
+ @media only screen and (max-width: 566px) {
+    .ocasion__carta{
+        font-size: 18px;
+    }
+}
+
+
+@media only screen and (max-width: 482px) {
+    .ocasion__carta{
+        font-size: 14px;
+    }
+}
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { CartService } from 'src/app/services/cart.service';
 import { ItemCart, Product } from 'src/app/models/products.model';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -12,10 +14,8 @@ export class CartComponent implements OnInit {
 
   form: FormGroup;
 
-  
-
   counter: Array<number> = [1,2,3,4];
-  itemsCart: Array<ItemCart> | Array<any> = [];
+  itemsCart: Array<ItemCart> = [];
   selectNumer: boolean = false;
 
   itemsDummy = [
@@ -33,10 +33,11 @@ export class CartComponent implements OnInit {
     ] },
   ]
 
+  $unsubscribe = new Subject();
+  totalAmount: number = 0;
 
 
-
-  constructor(private fb: FormBuilder, private cartService: CartService) { }
+  constructor(private fb: FormBuilder, public _cartService: CartService) { }
 
   ngOnInit() {
     this.formInit();
@@ -46,6 +47,11 @@ export class CartComponent implements OnInit {
 
   formInit() {
     this.form = this.fb.group({});
+  }
+
+  ngOnDestroy() {
+    this.$unsubscribe.next(true);
+    this.$unsubscribe.complete();
   }
 
   // Create control
@@ -59,35 +65,29 @@ export class CartComponent implements OnInit {
       this.counter.push(i);
     }
   }
-
   getItems() {
-    // this.cartService.getItems().subscribe((items: Array<any>) => {
-      // this.itemsCart = items;
-
-      // const count = items.length;
-      const count = this.itemsDummy.length;
-      // return;
-      if (count == 0) return false;
-      for(let i = 0; i < count; i++) {
-        this.addSelectToForm(i, this.itemsDummy[i].stock);
-      }
-    // })
+    this._cartService.getItems().pipe(takeUntil(this.$unsubscribe)).subscribe((items) => {
+      items.map((v, i) => {
+        this.addSelectToForm(i, v.quantity);
+      })
+      this.itemsCart = items;
+    });
   }
 
   setQuantityItem(product: Product, quantity: number) {
-    let resp = this.cartService.setQuantityItem(product, quantity);
+    let resp = this._cartService.setQuantityItem(product, quantity);
     console.log(resp);
   }
 
   // Remove cart items
-  removeItem(item, i) {
-    this.cartService.removeFromCart(item);
+  removeItem(item: Product, i) {
+    this._cartService.removeFromCart(item);
     console.log(this.form);
     this.form.removeControl(`controlItem${i}`)
   }
 
-  getTotal() {
-    return this.cartService.getTotalAmount();
+  deleteItem(item: Product) {
+    this._cartService.removeFromCart(item);
   }
 
 }

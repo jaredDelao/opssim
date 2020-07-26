@@ -27,39 +27,39 @@
                 <div class="menuCart__box-cart" #floatCart>
 
                     <!-- item row -->
-                    <div class="menuCart__item" *ngFor="let item of itemsDummy">
+                    <div class="menuCart__item" *ngFor="let item of itemsList">
                         <!-- item imagen -->
                         <div class="menuCart__image">
-                            <img class="menuCart__img" [src]="item.img[0]">
+                            <img class="menuCart__img" [src]="item.itemCart.sUrlImagenes[0]">
                         </div>
 
                         <!-- item info -->
                         <div class="menuCart__info">
                             <div class="menuCart__title">
-                                <span>{{ item.name }}</span>
+                                <span>{{ item.itemCart.sNombre }}</span>
                             </div>
                             <div class="menuCart__description">
-                                <span class="menuCart__quantity mr-3">x{{ item.stock }}</span>
-                                <span class="menuCart__price">{{ item.price | currency }}</span>
+                                <span class="menuCart__quantity mr-3">x{{ item.quantity }}</span>
+                                <span class="menuCart__price">{{ item.itemCart.dPrecioUnitario | currency }}</span>
                             </div>
                         </div>
 
                         <!-- item delete -->
                         <div class="menuCart__delete">
-                            <mat-icon color="primary">add_circle</mat-icon>
+                            <mat-icon color="primary" (click)="deleteItem(item.itemCart)">add_circle</mat-icon>
                         </div>
                     </div>
 
                     <!-- total -->
                     <div class="menuCart__total">
                         <span>Total:</span>
-                        <span>{{ 1500 | currency }}</span>
+                        <span>{{ _cartService.getTotalAmount() | async  | currency }}</span>
                     </div>
 
                     <!-- actions -->
                     <div class="menuCart__actions">
-                        <button mat-raised-button color="accent">Ver carrito</button>
-                        <button mat-raised-button color="primary">Pagar ahora</button>
+                        <button mat-raised-button color="accent" routerLink="/cart">Ver carrito</button>
+                        <button mat-raised-button color="primary" routerLink="/checkout">Pagar ahora</button>
                     </div>
 
                 </div>
@@ -80,7 +80,6 @@
 
 
 <!-- Toolbar mobile -->
-
 <mat-toolbar class="toolbar-menu-responsive">
 
     <button mat-icon-button (click)="toggleMenu()">

@@ -20,6 +20,7 @@ import { MenuOcasionComponent } from './menu-ocasion/menu-ocasion.component';
 import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProductsComponent } from './products/products.component';
 
 const modals = [SigninComponent, SignupComponent];
 @NgModule({
@@ -29,6 +30,7 @@ const modals = [SigninComponent, SignupComponent];
     CartComponent,
     CheckoutComponent,
     MenuOcasionComponent,
+    ProductsComponent,
   ],
   imports: [
     CommonModule,

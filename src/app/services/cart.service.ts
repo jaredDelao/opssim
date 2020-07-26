@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Product, ItemCart } from '../models/products.model';
 import { map } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
 
 const products = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -18,8 +19,11 @@ export class CartService {
   cartItems: BehaviorSubject<any[]> = new BehaviorSubject([]);
   observer: Subscriber<{}>;
 
-  constructor(private http: HttpClient) {
-    this.cartItems.subscribe(products => products = products);
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
+    this.cartItems.subscribe(_products => _products = products);
+
+    console.log('localStorage::',products);
+    
   }
 
   public getItems(): Observable<ItemCart[]> {
@@ -29,13 +33,14 @@ export class CartService {
   addToCart(itemCart: Product, quantity: number): ItemCart | boolean {
     let item: ItemCart | boolean = false;
     // If Products exist
+    debugger
     const productExist = products.find((items, index) => {
-      if (items.itemCart._id === itemCart._id) {
+      if (items.itemCart.iIdProducto === itemCart.iIdProducto) {
         const qty = products[index].quantity + quantity;
         const stock = this.calculateStockCounts(products[index], quantity);
           if (qty !== 0 && stock) {
               products[index].quantity = qty;
-              alert('se añadió al carrito')
+              this.openSnackBar('Se añadió al carrito', 'cerrar');
           }
         return true;
       }
@@ -53,11 +58,11 @@ export class CartService {
     let item: ItemCart | boolean = false;
     // If Products exist
     const productExist = products.find((items, index) => {
-      if (items.itemCart._id === itemCart._id) {
+      if (items.itemCart.iIdProducto === itemCart.iIdProducto) {
         const qty = quantity;
           if (qty !== 0) {
               products[index].quantity = qty;
-              alert('se añadió al carrito')
+              this.openSnackBar('se añadió al carrito', 'cerrar');
           }
         return true;
       }
@@ -87,7 +92,7 @@ export class CartService {
   // Update Cart Value
   public updateCartQuantity(product: Product, quantity: number): ItemCart | boolean {
     return products.find((items, index) => {
-       if (items.itemCart._id == product._id) {
+       if (items.itemCart.iIdProducto == product.iIdProducto) {
            const qty = products[index].quantity + quantity;
            const stock = this.calculateStockCounts(products[index], quantity);
            if (qty !== 0 && stock) {
@@ -103,7 +108,7 @@ export class CartService {
   // Set quantity Cart Value
   public setQuantityItem(product: Product, quantity: number): ItemCart | boolean {
     return products.find((items, index) => {
-       if (items.itemCart._id == product._id) {
+       if (items.itemCart.iIdProducto == product.iIdProducto) {
            const qty = quantity;
           //  const stock = this.calculateStockCounts(products[index], quantity);
            if (qty !== 0) {
@@ -121,7 +126,7 @@ export class CartService {
     var index: number = null;
     
     products.findIndex((element: ItemCart, i) => {
-      if (element.itemCart._id.toString() == item._id.toString()) index = i;
+      if (element.itemCart.iIdProducto.toString() == item.iIdProducto.toString()) index = i;
     })
 
     products.splice(index, 1);
@@ -141,12 +146,21 @@ export class CartService {
   getTotalAmount(): Observable<number> {
     return this.cartItems.pipe(map((product: ItemCart[]) => {
         return products.reduce((prev, curr: ItemCart) => {
-            return prev + curr.itemCart.price * curr.quantity;
+            return prev + curr.itemCart.dPrecioUnitario * curr.quantity;
         }, 0);
   }));
-}
+  }
   
   updateCounterCart() {
   
+  }
+
+
+
+  // Snackbar
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class TestService {
   constructor(public http: HttpClient) { }
 
   test() {
-    return this.http.get('http://34.234.225.159:8080/RestFull_ECOMMERCE-1.0/rest/ECOMMERCE/productos')
+    return this.http.get(environment.url + 'productos')
   }
   
 }

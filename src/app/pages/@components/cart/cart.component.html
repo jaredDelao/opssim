@@ -15,22 +15,22 @@
                     </button>
                 </th>
             </tr>
-            <tr class="tabla__rows" *ngFor="let item of itemsDummy; let i = index">
+            <tr class="tabla__rows" *ngFor="let item of itemsCart; let i = index">
 
                 <td>
                     <div class="tabla__image-product">
-                        <img [src]="item.img[0]" alt="">
+                        <img [src]="item.itemCart.sUrlImagenes[0]" alt="">
                     </div>
                 </td>
 
                 <td class="tabla__description-row">
                     <p>
-                        {{item.name}}
+                        {{item.itemCart.sNombre}}
                     </p>
-                    <p class="text-color">{{item.category}}</p>
+                    <p class="text-color">{{item.itemCart.sNombreCategoria }}</p>
                 </td>
 
-                <td class="tabla__precio">{{ item.price | currency}}</td>
+                <td class="tabla__precio">{{ item.itemCart.dPrecioUnitario | currency }}</td>
 
                 <td>
                     <!-- <mat-form-field appearance="fill" class="mt-2 tabla__select-precio" *ngIf="!selectNumer"> -->
@@ -44,16 +44,16 @@
                     <div class="form-group tabla__select-precio">
                         <!-- <label for="sel1">Select :</label> -->
                         <select class="form-control" [formControlName]="'controlItem'+i">
-                            <option *ngFor="let count of counter | stockSelect: item.stock" [value]="count">{{count}}
+                            <option *ngFor="let count of counter | stockSelect: item.quantity" [value]="count">{{count}}
                             </option>
                         </select>
                     </div>
                 </td>
 
-                <td class="tabla__total">{{ item.price | currency}}</td>
+                <td class="tabla__total">{{ item.itemCart.dPrecioUnitario | currency}}</td>
 
                 <td class="tabla__delete">
-                    <button mat-icon-button type="button">
+                    <button mat-icon-button type="button" (click)="deleteItem(item.itemCart)">
                         <mat-icon>clear</mat-icon>
                     </button>
                 </td>
@@ -62,18 +62,19 @@
         </table>
 
 
+        <!-- Responsive -->
         <div class="box-cart">
             <div class="box-cart__items-wrapper">
                 <!-- items-list -->
-                <div class="box-cart__item-wrapper" *ngFor="let item of itemsDummy; let i = index">
+                <div class="box-cart__item-wrapper" *ngFor="let item of itemsCart; let i = index">
                     <div class="box-cart__image-product">
-                        <img [src]="item.img[0]" alt="">
+                        <img [src]="item.itemCart.sUrlImagenes[0]" alt="">
                     </div>
 
                     <div class="box-cart__description">
                         <div class="text mb-2">
-                            <p class="name">{{item.name}}</p>
-                            <span>{{item.category}}</span>
+                            <p class="name">{{item.itemCart.sNombre}}</p>
+                            <span>{{item.itemCart.sNombreCategoria}}</span>
                         </div>
                         <div class="stock">
                             <!-- <span class="mb-2">{{item.itemCart.available ? 'Disponible' : 'No Disponible'}}</span> -->
@@ -82,13 +83,13 @@
                                 <div class="form-group tabla__select-precio">
                                     <!-- <label for="sel1">Select :</label> -->
                                     <select class="form-control" [formControlName]="'controlItem'+i">
-                                        <option *ngFor="let count of counter | stockSelect: item.stock" [value]="count">
+                                        <option *ngFor="let count of counter | stockSelect: item.quantity" [value]="count">
                                             {{count}}</option>
                                     </select>
                                 </div>
 
                                 <div class="delete-text">
-                                    <span>Eliminar</span>
+                                    <span (click)="deleteItem(item.itemCart)">Eliminar</span>
                                 </div>
 
                             </div>
@@ -102,7 +103,7 @@
             <div class="box-cart__total-wrapper">
                 <div class="box-total">
                     <div class="subtotal">
-                        <span>Subtotal ({{itemsDummy.length}} productos): $1,200</span>
+                        <span>Subtotal ({{ itemsCart.length }} productos): {{ _cartService.getTotalAmount() | async }}</span>
                         <button mat-raised-button color="primary">Proceder al pago</button>
                     </div>
                 </div>
@@ -128,11 +129,11 @@
                 </tr> -->
                 <tr>
                     <td>Subtotal:</td>
-                    <td class="text-color">{{1200 | currency}}</td>
+                    <td class="text-color">{{ _cartService.getTotalAmount() | async  | currency}}</td>
                 </tr>
                 <tr>
                     <td>Total:</td>
-                    <td class="text-color">{{1200 | currency}}</td>
+                    <td class="text-color">{{ _cartService.getTotalAmount() | async  | currency}}</td>
                 </tr>
             </table>
 

@@ -5,24 +5,28 @@ export interface AllProducts {
 }
 
 export interface Product {
-    _id: string,
-    available: boolean,
-    category: string,
-    description: string,
-    date: string,
-    name: string,
-    price: number,
-    stock: number,
-    img: Array<Image>
+    iIdProducto: number,
+    dPrecioUnitario: number,
+    dTasaIva: number,
+    iCategoria: number,
+    iTipo: number,
+    sDescripcion: string,
+    sNombre: string,
+    sNombreCategoria: string,
+    sTipoProducto: string,
+    sUrlImagenes: Array<string>
 }
-
-export interface Image {
-    _id: string,
-    name: string,
-    path: string,
-    size: number
-}
-
+// export interface Product {
+//     _id: string,
+//     available: boolean,
+//     category: string,
+//     description: string,
+//     date: string,
+//     name: string,
+//     price: number,
+//     stock: number,
+//     img: Array<Image>
+// }
 
 export interface AddProduct {
     name: string,

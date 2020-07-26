@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { SidenavService } from './services/sidenav.service';
 import { MatDrawer } from '@angular/material';
+import { TestService } from './services/test.service';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     // { path: '/contacto', name: 'Contáctanos', link: '/'},
   ];
 
-  constructor(private _sidenavService: SidenavService) {} 
+  constructor(private _sidenavService: SidenavService, private testService: TestService) {} 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.testService.test().subscribe(console.log)
+  }
   
   ngAfterViewInit() {
     this._sidenavService.$openClose.subscribe((resp: boolean) => {

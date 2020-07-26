@@ -1,17 +1,20 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, ViewContainerRef, OnInit, OnDestroy } from '@angular/core';
 import { MenuSign } from '../models/enum.model';
 import { MatDialog } from '@angular/material';
 import { SignupComponent } from '../shared/@modals/signup/signup.component';
 import { SigninComponent } from '../shared/@modals/signin/signin.component';
 import { SidenavService } from '../services/sidenav.service';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Subject } from 'rxjs';
+import { CartService } from '../services/cart.service';
+import { ItemCart, Product } from '../models/products.model';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html' ,
   styleUrls: ['./pages.component.scss']
 })
-export class PagesComponent implements AfterViewInit {
+export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
 
   @ViewChild('cart', {static: false}) btnCart: ElementRef<HTMLImageElement>
 
@@ -35,10 +38,34 @@ export class PagesComponent implements AfterViewInit {
     {name: 'Jack Daniels', category: 'Whiskey', price: 300, stock: 1, description: 'description', img: [
       '../../../../assets/images/demo/botella4.jpg'
     ] },
-  ]
+  ];
+
+  itemsList: ItemCart[] = [];
+  totalAmount: number = 0;
+
+  $unsubscribe = new Subject();
 
 
-  constructor(public dialog: MatDialog, private _sidenavService: SidenavService) {}
+  constructor(public dialog: MatDialog, private _sidenavService: SidenavService, public _cartService: CartService) {}
+
+  ngOnInit() {
+    this.getItems();
+  }
+
+  getItems() {
+    this._cartService.getItems().pipe(takeUntil(this.$unsubscribe)).subscribe((items) => {
+      this.itemsList = items;
+    });
+  }
+
+  ngAfterViewInit() {
+
+  }
+
+  ngOnDestroy() {
+    this.$unsubscribe.next(true);
+    this.$unsubscribe.complete();
+  }
 
   openModal(type: 'signIn' | 'signUp') {
 
@@ -64,8 +91,8 @@ export class PagesComponent implements AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-
+  deleteItem(item: Product) {
+    this._cartService.removeFromCart(item);
   }
 
 

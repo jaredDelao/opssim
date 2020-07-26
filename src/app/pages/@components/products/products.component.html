@@ -1,0 +1,35 @@
+<div class="container-principal">
+
+    <section class="cards">
+
+        <article class="card card--1" *ngFor="let product of productosList">
+
+            <button class="card__btn-ver" mat-raised-button color="primary">Ver</button>
+
+            <div class="card__img"></div>
+                <a class="card_link" [routerLink]="['/detalle-producto', product.iCategoria]">
+                    <div class="card__img--hover" [style.backgroundImage]="'url('+product.sUrlImagenes[0]+')'"></div>
+                </a>
+            <div class="card__info">
+                <div class="card__info-display">
+                    <div class="card__name">
+                        <span class="card__title">{{product?.sNombre}}</span>
+                    </div>
+                    <div class="card__price-category">
+                        <span class="card__category"> {{product?.sNombreCategoria}} </span>
+                        <span class="card__price text-color"> {{product?.dPrecioUnitario | currency}} </span>
+                    </div>
+                </div>
+                <div class="card__info-hover">
+                    <img src="../../../../assets/images/svg/cart.svg" alt="" (click)="addToCart(product)">
+                </div>
+                
+                <!-- <span class="card__by">by <a class="card__author" title="author">Celeste Mills</a></span> -->
+                <!-- <button mat-raised-button color="primary" class="btn-add-cart" (click)="addToCart(product, 1)">Agregar al carrito</button> -->
+                <!-- <mat-icon color="primary" class="btn-add-cart" (click)="addToCart(product, 1)">add_shopping_cart </mat-icon> -->
+            </div>
+        </article>
+
+    </section>
+
+</div>

@@ -6,11 +6,13 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SignupComponent } from 'src/app/shared/@modals/signup/signup.component';
 import { MenuOcasionComponent } from './menu-ocasion/menu-ocasion.component';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'registro', component: SignupComponent},
+  {path: 'products', component: ProductsComponent},
   {path: 'product-detail', component: ProductDetailComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},

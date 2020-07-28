@@ -40,3 +40,8 @@ export interface ItemCart {
     itemCart: Product,
     quantity: number,
 }
+
+export interface Categoria {
+    iIdCategoria: number,
+    sNombreCategoria: string,
+}

@@ -7,8 +7,16 @@
     <div class="toolbar-menu__left"> </div>
 
     <div class="toolbar-menu__center">
+        <button class="toolbar-menu__button" mat-button [matMenuTriggerFor]="categorias" >PRODUCTOS</button>
         <button class="toolbar-menu__button" mat-button *ngFor="let btn of buttons" [routerLink]="[btn.link]"
             routerLinkActive="router-link-active">{{ btn.name | uppercase }}</button>
+
+        <!-- float products (categories) -->
+        <mat-menu #categorias="matMenu" xPosition="before">
+            <button mat-menu-item (click)="openCategory(1,item.iIdCategoria)" *ngFor="let item of categoriesList">
+                {{item.sNombreCategoria | uppercase}}
+            </button>
+        </mat-menu>
     </div>
 
     <div class="toolbar-menu__right">
@@ -27,7 +35,7 @@
                 <div class="menuCart__box-cart" #floatCart>
 
                     <!-- item row -->
-                    <div class="menuCart__item" *ngFor="let item of itemsList">
+                    <div class="menuCart__item" *ngFor="let item of _cartService.getItems() | async">
                         <!-- item imagen -->
                         <div class="menuCart__image">
                             <img class="menuCart__img" [src]="item.itemCart.sUrlImagenes[0]">

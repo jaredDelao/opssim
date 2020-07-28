@@ -6,8 +6,10 @@ import { SigninComponent } from '../shared/@modals/signin/signin.component';
 import { SidenavService } from '../services/sidenav.service';
 import { fromEvent, Subject } from 'rxjs';
 import { CartService } from '../services/cart.service';
-import { ItemCart, Product } from '../models/products.model';
+import { ItemCart, Product, Categoria } from '../models/products.model';
 import { takeUntil } from 'rxjs/operators';
+import { ProductsService } from '../services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pages',
@@ -19,7 +21,7 @@ export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
   @ViewChild('cart', {static: false}) btnCart: ElementRef<HTMLImageElement>
 
   buttons: Array<any> = [
-    { path: '/productos', name: 'Productos', link: '/product-detail'},
+    // { path: '/productos', name: 'Productos', link: '/product-detail'},
     { path: '/paquetes', name: 'Paquetes', link: '/'},
     { path: '/ocasion', name: 'Para la ocasión', link: '/menu-ocasion'},
     { path: '/contacto', name: 'Contactanos', link: '/'},
@@ -40,22 +42,17 @@ export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
     ] },
   ];
 
-  itemsList: ItemCart[] = [];
-  totalAmount: number = 0;
+  categoriesList: Categoria[] = [];
 
   $unsubscribe = new Subject();
 
 
-  constructor(public dialog: MatDialog, private _sidenavService: SidenavService, public _cartService: CartService) {}
+  constructor(public dialog: MatDialog, private _sidenavService: SidenavService, 
+    public _cartService: CartService, public _productsService: ProductsService,
+    private router: Router) {}
 
   ngOnInit() {
-    this.getItems();
-  }
-
-  getItems() {
-    this._cartService.getItems().pipe(takeUntil(this.$unsubscribe)).subscribe((items) => {
-      this.itemsList = items;
-    });
+    this.getCategories();
   }
 
   ngAfterViewInit() {
@@ -65,6 +62,16 @@ export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.$unsubscribe.next(true);
     this.$unsubscribe.complete();
+  }
+
+  getCategories() {
+    this._productsService.getCategorias().pipe(takeUntil(this.$unsubscribe)).subscribe(categorias => {
+      this.categoriesList = categorias;
+    })
+  }
+
+  openCategory(idTipo: number, idCategory: number) {
+    this.router.navigate(['/products',idTipo,idCategory]);
   }
 
   openModal(type: 'signIn' | 'signUp') {

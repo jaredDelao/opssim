@@ -15,7 +15,6 @@ export class CartComponent implements OnInit {
   form: FormGroup;
 
   counter: Array<number> = [1,2,3,4];
-  itemsCart: Array<ItemCart> = [];
   selectNumer: boolean = false;
 
   itemsDummy = [
@@ -67,16 +66,15 @@ export class CartComponent implements OnInit {
   }
   getItems() {
     this._cartService.getItems().pipe(takeUntil(this.$unsubscribe)).subscribe((items) => {
-      items.map((v, i) => {
+      items.forEach((v, i) => {
         this.addSelectToForm(i, v.quantity);
-      })
-      this.itemsCart = items;
-    });
+      })      
+    });    
   }
-
-  setQuantityItem(product: Product, quantity: number) {
-    let resp = this._cartService.setQuantityItem(product, quantity);
-    console.log(resp);
+  
+  updateQuantity(item: Product, quantity: number | string) {
+    quantity = Number(quantity);
+    let resp = this._cartService.setQuantityItem(item, quantity)
   }
 
   // Remove cart items
@@ -88,6 +86,10 @@ export class CartComponent implements OnInit {
 
   deleteItem(item: Product) {
     this._cartService.removeFromCart(item);
+  }
+
+  resetCart() {
+    this._cartService.resetCart();
   }
 
 }

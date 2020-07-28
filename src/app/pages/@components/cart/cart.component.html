@@ -10,12 +10,12 @@
                 <th>CANTIDAD</th>
                 <th>TOTAL</th>
                 <th>
-                    <button mat-icon-button type="button" style="vertical-align: middle;">
+                    <button mat-icon-button type="button" style="vertical-align: middle;" (click)="resetCart()">
                         <mat-icon>clear</mat-icon>
                     </button>
                 </th>
             </tr>
-            <tr class="tabla__rows" *ngFor="let item of itemsCart; let i = index">
+            <tr class="tabla__rows" *ngFor="let item of _cartService.getItems() | async; let i = index">
 
                 <td>
                     <div class="tabla__image-product">
@@ -43,14 +43,14 @@
 
                     <div class="form-group tabla__select-precio">
                         <!-- <label for="sel1">Select :</label> -->
-                        <select class="form-control" [formControlName]="'controlItem'+i">
+                        <select class="form-control" [formControlName]="'controlItem'+i" (change)="updateQuantity(item.itemCart, $event.target.value)">
                             <option *ngFor="let count of counter | stockSelect: item.quantity" [value]="count">{{count}}
                             </option>
                         </select>
                     </div>
                 </td>
 
-                <td class="tabla__total">{{ item.itemCart.dPrecioUnitario | currency}}</td>
+                <td class="tabla__total">{{ item.itemCart.dPrecioUnitario * item.quantity | currency}}</td>
 
                 <td class="tabla__delete">
                     <button mat-icon-button type="button" (click)="deleteItem(item.itemCart)">
@@ -66,7 +66,7 @@
         <div class="box-cart">
             <div class="box-cart__items-wrapper">
                 <!-- items-list -->
-                <div class="box-cart__item-wrapper" *ngFor="let item of itemsCart; let i = index">
+                <div class="box-cart__item-wrapper" *ngFor="let item of _cartService.getItems() | async; let i = index">
                     <div class="box-cart__image-product">
                         <img [src]="item.itemCart.sUrlImagenes[0]" alt="">
                     </div>
@@ -103,7 +103,7 @@
             <div class="box-cart__total-wrapper">
                 <div class="box-total">
                     <div class="subtotal">
-                        <span>Subtotal ({{ itemsCart.length }} productos): {{ _cartService.getTotalAmount() | async }}</span>
+                        <span>Subtotal ({{ _cartService.getCounterItems() | async }} productos): <span class="text-color">{{ _cartService.getTotalAmount() | async | currency }}</span></span>
                         <button mat-raised-button color="primary">Proceder al pago</button>
                     </div>
                 </div>

@@ -1,17 +1,17 @@
-<div class="container">
+<div class="container" *ngIf="product">
 
     <!-- Gallery -->
 
-    <gallery style="background-color: white;" [items]="images" thumbPosition="right"></gallery>
+    <gallery style="background-color: white;" [items]="images" thumbPosition="right" *ngIf="images.length > 0"></gallery>
 
 
     <!-- Descripcion -->
 
     <div class="description">
         <!-- producto -->
-        <p class="description__name">Vodka Absolute Mango 750 ml</p>
+        <p class="description__name">{{ product.sNombre }}</p>
         <!-- precio -->
-        <p class="description__price text-color">$144.00</p>
+        <p class="description__price text-color">{{ product.dPrecioUnitario | currency }}</p>
         <!-- Nota -->
         <p class="description__alert text-color">Debes ser mayor de edad para ordenar este producto</p>
         <!-- categoría y rss -->

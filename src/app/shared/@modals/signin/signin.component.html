@@ -14,17 +14,17 @@
 
         <mat-form-field>
             <mat-label>Correo</mat-label>
-            <input matInput type="text" formControlName="correo">
+            <input matInput type="text" formControlName="sCorreoElectronico">
             <mat-error *ngIf="correo.errors?.required">Campo obligatorio</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Contraseña</mat-label>
-            <input matInput type="text" formControlName="password">
+            <input matInput type="text" formControlName="sPassword">
             <mat-error *ngIf="password.errors?.required">Campo obligatorio</mat-error>
         </mat-form-field>
 
-        <button class="btn-create" mat-raised-button color="primary">Ingresar</button>
+        <button class="btn-create" mat-raised-button color="primary" (click)="ingresar()">Ingresar</button>
 
     </div>
 

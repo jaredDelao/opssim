@@ -6,7 +6,7 @@ import { Product, ItemCart } from '../models/products.model';
 import { map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
 
-const products = JSON.parse(localStorage.getItem('cart')) || [];
+let products = JSON.parse(localStorage.getItem('cart')) || [];
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,6 @@ export class CartService {
   addToCart(itemCart: Product, quantity: number): ItemCart | boolean {
     let item: ItemCart | boolean = false;
     // If Products exist
-    debugger
     const productExist = products.find((items, index) => {
       if (items.itemCart.iIdProducto === itemCart.iIdProducto) {
         const qty = products[index].quantity + quantity;
@@ -49,6 +48,7 @@ export class CartService {
     if (!productExist) {
       item = { itemCart, quantity };
       products.push(item);
+      this.openSnackBar('Se añadió al carrito', 'cerrar');
     }
     localStorage.setItem('cart', JSON.stringify(products));
     return products;
@@ -90,7 +90,7 @@ export class CartService {
   }
 
   // Update Cart Value
-  public updateCartQuantity(product: Product, quantity: number): ItemCart | boolean {
+  updateCartQuantity(product: Product, quantity: number): ItemCart | boolean {
     return products.find((items, index) => {
        if (items.itemCart.iIdProducto == product.iIdProducto) {
            const qty = products[index].quantity + quantity;
@@ -106,7 +106,7 @@ export class CartService {
 
 
   // Set quantity Cart Value
-  public setQuantityItem(product: Product, quantity: number): ItemCart | boolean {
+  setQuantityItem(product: Product, quantity: number): ItemCart | boolean {
     return products.find((items, index) => {
        if (items.itemCart.iIdProducto == product.iIdProducto) {
            const qty = quantity;
@@ -121,7 +121,8 @@ export class CartService {
   }
 
   // Removed in cart
-  public removeFromCart(item: Product) {
+  removeFromCart(item: Product) {
+    debugger
     if (!item || item === undefined) return false;
     var index: number = null;
     
@@ -151,8 +152,12 @@ export class CartService {
   }));
   }
   
-  updateCounterCart() {
-  
+  resetCart() {
+    // debugger;
+    // products = []
+    
+    products = [];
+    localStorage.setItem('cart', JSON.stringify(products));
   }
 
 

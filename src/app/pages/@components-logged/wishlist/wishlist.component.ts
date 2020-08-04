@@ -19,6 +19,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { CartService } from 'src/app/services/cart.service';
 import { ItemCart, Product } from 'src/app/models/products.model';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -46,63 +47,28 @@ export class WishlistComponent implements OnInit {
     {name: 'Jack Daniels', category: 'Whiskey', price: 100, stock: 3, description: 'description', img: [
       '../../../../assets/images/demo/botella4.jpg'
     ] },
-  ]
+  ];
+
+  items: Array<Product> = [];
 
 
-
-
-  constructor(private fb: FormBuilder, private cartService: CartService) { }
+  constructor(public _wishlistService: WishlistService) { }
 
   ngOnInit() {
-    this.formInit();
     this.getItems();
   }
 
-
-  formInit() {
-    this.form = this.fb.group({});
-  }
-
-  // Create control
-  addSelectToForm(i, value) {
-    let control: FormControl = new FormControl(value);
-    this.form.setControl(`controlItem${i}`, control)
-  }
-
-  getCounter() {
-    for(let i=1; i<=8; i++) {
-      this.counter.push(i);
-    }
-  }
-
+  // Get list items from WishList
   getItems() {
-    // this.cartService.getItems().subscribe((items: Array<any>) => {
-      // this.itemsCart = items;
-
-      // const count = items.length;
-      const count = this.itemsDummy.length;
-      // return;
-      if (count == 0) return false;
-      for(let i = 0; i < count; i++) {
-        this.addSelectToForm(i, this.itemsDummy[i].stock);
-      }
-    // })
-  }
-
-  setQuantityItem(product: Product, quantity: number) {
-    let resp = this.cartService.setQuantityItem(product, quantity);
-    console.log(resp);
+    this._wishlistService.getWishlist().subscribe(resp => {
+      this.items = resp;
+    })
   }
 
   // Remove cart items
-  removeItem(item, i) {
-    this.cartService.removeFromCart(item);
+  removeItem(item: Product) {
+    this._wishlistService.deleteWishlist(String(item.iIdProducto));
     console.log(this.form);
-    this.form.removeControl(`controlItem${i}`)
-  }
-
-  getTotal() {
-    return this.cartService.getTotalAmount();
   }
 
 }

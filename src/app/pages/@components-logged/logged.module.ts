@@ -11,6 +11,7 @@ import { UppercaseDirective } from 'src/app/shared/directives/uppercase.directiv
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProfileComponent } from './profile/profile.component';
 
 const components = [AccountMenuComponent, BillsComponent];
 const directives = [UppercaseDirective];
@@ -20,7 +21,8 @@ const directives = [UppercaseDirective];
     ...components,
     ...directives,
     AddBillComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

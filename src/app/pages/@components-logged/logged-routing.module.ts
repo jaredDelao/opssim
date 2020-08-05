@@ -4,6 +4,7 @@ import { AccountMenuComponent } from './account-menu/account-menu.component';
 import { BillsComponent } from './bills/bills.component';
 import { AddBillComponent } from './add-bill/add-bill.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'bills', component: BillsComponent },
   { path: 'add-bill', component: AddBillComponent },
   { path: 'wishlist', component: WishlistComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

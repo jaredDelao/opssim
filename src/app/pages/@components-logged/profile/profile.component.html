@@ -5,8 +5,6 @@
 <div class="container__cards">
 
     <div class="cardtextual">
-
-
         <div class="cardtextual__arriba">
             <span>NOMBRE:</span>
         </div>
@@ -14,21 +12,25 @@
         <div class="cardtextual__abajo">
 
             <div class="cardtextual__txt">
-                <span>PEDRO ROMERO HERRERA</span>
+                <span *ngIf="!Fnombre">PEDRO ROMERO HERRERA</span>
+
+                <div class="cardtextual__formField" *ngIf="Fnombre">
+                    <mat-form-field appearance="fill">
+                        <input matInput #inputName>
+                    </mat-form-field>
+                </div>
             </div>
 
             <div class="cardtextual__boton">
-                <button mat-raised-button type="button" class="btn-modificar">MODIFICAR</button>
+                <button mat-raised-button type="button" class="btn-modificar" (click)="editField('Fnombre', 'inputName')">
+                    {{ Fnombre ? 'CANCELAR' : 'MODIFICAR'}}
+                </button>
 
             </div>
-
-
         </div>
     </div>
 
     <div class="cardtextual">
-
-
         <div class="cardtextual__arriba">
             <span>CORREO ELECTRÓNICO:</span>
         </div>
@@ -36,43 +38,74 @@
         <div class="cardtextual__abajo">
 
             <div class="cardtextual__txt">
-                <span>pedro@gmail.com</span>
+                <span *ngIf="!Fcorreo">pedro@gmail.com</span>
+
+                <div class="cardtextual__formField" *ngIf="Fcorreo">
+                    <mat-form-field appearance="fill">
+                        <input matInput #inputMail>
+                    </mat-form-field>
+                </div>
             </div>
 
             <div class="cardtextual__boton">
-                <button mat-raised-button type="button" class="btn-modificar">MODIFICAR</button>
+                <button mat-raised-button type="button" class="btn-modificar" (click)="editField('Fcorreo', 'inputMail')">
+                    {{ Fcorreo ? 'CANCELAR' : 'MODIFICAR'}}
+                </button>
 
             </div>
-
-
         </div>
     </div>
 
     <div class="cardtextual">
-
         <div class="cardtextual__arriba">
             <span>NÚMERO DE CELULAR:</span>
         </div>
 
         <div class="cardtextual__abajo">
-            <span>044-55-31-79-88</span>
-            <button mat-raised-button type="button" class="btn-modificar">MODIFICAR</button>
 
+            <div class="cardtextual__txt">
+                <span *ngIf="!Ftelefono">5534677845</span>
 
+                <div class="cardtextual__formField" *ngIf="Ftelefono">
+                    <mat-form-field appearance="fill">
+                        <input matInput #inputTelefono>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cardtextual__boton">
+                <button mat-raised-button type="button" class="btn-modificar" (click)="editField('Ftelefono', 'inputTelefono')">
+                    {{ Ftelefono ? 'CANCELAR' : 'MODIFICAR'}}
+                </button>
+
+            </div>
         </div>
     </div>
 
     <div class="cardtextual">
-
         <div class="cardtextual__arriba">
             <span>CONTRASEÑA:</span>
         </div>
 
         <div class="cardtextual__abajo">
-            <span>*****</span>
-            <button mat-raised-button type="button" class="btn-modificar">MODIFICAR</button>
 
+            <div class="cardtextual__txt">
+                <span *ngIf="!Fpassword">*******</span>
 
+                <div class="cardtextual__formField" *ngIf="Fpassword">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput #inputPassword>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cardtextual__boton">
+                <button mat-raised-button type="button" class="btn-modificar" (click)="editField('Fpassword', 'inputPassword')">
+                    {{ Fpassword ? 'CANCELAR' : 'MODIFICAR'}}
+                </button>
+
+            </div>
         </div>
     </div>
 

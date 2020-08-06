@@ -12,7 +12,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
-import { AdressComponent } from './adress/adress.component';
+import { AddressComponent } from './address/address.component';
 
 const components = [AccountMenuComponent, BillsComponent];
 const directives = [UppercaseDirective];
@@ -24,7 +24,7 @@ const directives = [UppercaseDirective];
     AddBillComponent,
     WishlistComponent,
     ProfileComponent,
-    AdressComponent
+    AddressComponent,
   ],
   imports: [
     CommonModule,

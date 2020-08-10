@@ -5,6 +5,7 @@ import { BillsComponent } from './bills/bills.component';
 import { AddBillComponent } from './add-bill/add-bill.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddressComponent } from './address/address.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'add-bill', component: AddBillComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'address', component: AddressComponent },
+
 ];
 
 @NgModule({

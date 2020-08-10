@@ -13,6 +13,7 @@ import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const components = [AccountMenuComponent, BillsComponent];
 const directives = [UppercaseDirective];
@@ -25,6 +26,7 @@ const directives = [UppercaseDirective];
     WishlistComponent,
     ProfileComponent,
     AddressComponent,
+    OrdersComponent,
   ],
   imports: [
     CommonModule,

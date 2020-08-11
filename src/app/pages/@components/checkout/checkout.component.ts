@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { CartService } from 'src/app/services/cart.service';
+import { ItemCart } from 'src/app/models/products.model';
+import { Observable } from 'rxjs';
+import { CreateOrder } from 'src/app/models/order.model';
+import { switchMap } from 'rxjs/operators';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +18,7 @@ export class CheckoutComponent implements OnInit {
   formDirection: FormGroup;
   formComplement: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _cartService: CartService, private _orderService: OrderService) { }
 
   ngOnInit() {
     this.formInit();
@@ -41,6 +47,34 @@ export class CheckoutComponent implements OnInit {
       receptor: [null],
     });
 
+  }
+
+
+  get getProducts(): Observable<ItemCart[]>  {
+    return this._cartService.getItems();
+  }
+
+  get getTotalCart(): Observable<number> {
+    return this._cartService.getTotalAmount();
+  }
+
+  async confirmOrder() {
+    const products: Array<ItemCart> = await this.getProducts.toPromise();
+    
+    this._cartService.getTotalAmount().pipe(
+      switchMap((total: number) => {
+        let order = new CreateOrder(1, 'José', total, products);
+        const base64 = btoa(JSON.stringify(order));
+        return this._orderService.createOrder('1', base64)
+      })
+    ).subscribe((resp) => {
+      
+      console.log(resp);
+      
+      
+    })
+
+    
   }
 
 }

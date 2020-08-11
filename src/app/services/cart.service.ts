@@ -19,6 +19,10 @@ export class CartService {
   cartItems: BehaviorSubject<any[]> = new BehaviorSubject([]);
   observer: Subscriber<{}>;
 
+
+  // Shipping
+  shipping: number = 100;
+
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
     this.cartItems.subscribe(_products => _products = products);
 
@@ -149,8 +153,18 @@ export class CartService {
         return products.reduce((prev, curr: ItemCart) => {
             return prev + curr.itemCart.dPrecioUnitario * curr.quantity;
         }, 0);
-  }));
+    }));
   }
+
+  // Total amount with shipping
+  // getTotalAmountWithShipping(): Observable<number> {
+  //   let total = this.cartItems.pipe(map((product: ItemCart[]) => {
+  //       return products.reduce((prev, curr: ItemCart) => {
+  //           return prev + curr.itemCart.dPrecioUnitario * curr.quantity;
+  //       }, 0);
+  //   }));
+  //   return total + this.shipping;
+  // }
   
   resetCart() {
     // debugger;

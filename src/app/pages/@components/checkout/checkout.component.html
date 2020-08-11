@@ -144,10 +144,10 @@
                     </div>
                 </mat-list-item>
 
-                <mat-list-item role="listitem">
+                <mat-list-item role="listitem" *ngFor="let item of getProducts | async">
                     <div class="order__header-list">
-                        <span>Tomatin 12 years old x 2</span>
-                        <span>$142</span>
+                        <span>{{ item.itemCart.sNombre }} x {{ item.quantity }}</span>
+                        <span>{{ (item.quantity * item.itemCart.dPrecioUnitario) | currency }}</span>
                     </div>
                 </mat-list-item>
 
@@ -155,21 +155,21 @@
                 <mat-list-item role="listitem">
                     <div class="order__header-list">
                         <span>Cart subtotal</span>
-                        <span>$384</span>
+                        <span>{{ getTotalCart | async | currency}}</span>
                     </div>
                 </mat-list-item>
                 <!-- Envío -->
                 <mat-list-item role="listitem">
                     <div class="order__header-list">
                         <span>Costo de envío</span>
-                        <span>Envío gratis</span>
+                        <span>{{ (getTotalCart | async) > 100 ? 'Envío gratis' : ((getTotalCart | async) + 100 | currency)}}</span>
                     </div>
                 </mat-list-item>
                 <!-- Total -->
                 <mat-list-item class="order__list-item-total" role="listitem">
                     <div class="order__header-list">
                         <span>ORDEN TOTAL</span>
-                        <span>$384</span>
+                        <span>{{ (getTotalCart | async) > 100 ? (getTotalCart | async | currency) : ((getTotalCart | async) + 100 | currency) }}</span>
                     </div>
                 </mat-list-item>
 
@@ -185,7 +185,7 @@
             <!-- actions -->
             <div class="order__actions mt-4">
                 <button mat-raised-button color="accent">Regresar al carrito</button>
-                <button mat-raised-button color="primary">Confirmar pedido</button>
+                <button mat-raised-button color="primary" (click)="confirmOrder()">Confirmar pedido</button>
             </div>
 
 

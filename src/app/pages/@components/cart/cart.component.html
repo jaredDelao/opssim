@@ -104,7 +104,7 @@
                 <div class="box-total">
                     <div class="subtotal">
                         <span>Subtotal ({{ _cartService.getCounterItems() | async }} productos): <span class="text-color">{{ _cartService.getTotalAmount() | async | currency }}</span></span>
-                        <button mat-raised-button color="primary">Proceder al pago</button>
+                        <button mat-raised-button color="primary" routerLink="/checkout">Proceder al pago</button>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
 
             <!-- boton pago -->
             <div class="actions__finalizar-compra">
-                <button mat-raised-button color="primary">PROCEDER AL PAGO</button>
+                <button mat-raised-button color="primary" routerLink="/checkout">PROCEDER AL PAGO</button>
             </div>
         </div>
 

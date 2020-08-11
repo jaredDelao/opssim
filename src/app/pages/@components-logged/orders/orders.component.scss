@@ -149,6 +149,12 @@
 .numero__modifer{
     justify-content: center;
     text-align: center;
+    font-family: "Alone";
+    font-size: 25px;
+}
+.spaNum{
+    display: none;
+   
 }
 
 /*---------------------------BREAKPOINTS--------------------*/
@@ -172,9 +178,13 @@
     .cardContainer__modifer{
         width: 100%;
     }
+
+    .cardContainer__abajo__img{
+        width: 70px;
+    }
 }
 
-@media only screen and (max-width: 472px) {
+@media only screen and (max-width: 564px) {
 
     .cardContainer{
         flex-direction: column;
@@ -184,6 +194,16 @@
     }
  .cardContainer__abajo{
         width: 100%;
+    }
+
+    .numero__modifer{
+        display: none;
+    }
+    .spaNum{
+        display: block;
+    }
+    .cardContainer__abajo__img{
+        width: 55%;
     }
 
 }

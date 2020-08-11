@@ -6,6 +6,7 @@ import { AddBillComponent } from './add-bill/add-bill.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,9 @@ const routes: Routes = [
   { path: 'wishlist', component: WishlistComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'address', component: AddressComponent },
+  { path: 'address', component: AddressComponent },
+  { path: 'orders', component: OrdersComponent },
+
 
 ];
 

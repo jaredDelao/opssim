@@ -1,0 +1,189 @@
+@import "../../../shared/theme/global.scss";
+
+/*
+ $primary: #a6212c;
+ $secondary: #961520;
+ $extra: #bd9954;
+*/
+
+
+
+.titulo{
+    font-size: 60px;
+    color: $primary;
+    text-align: center;
+
+
+    & p{
+        font-family: "Alone";
+    }  
+
+    @media screen and (max-width: 670px) {
+        font-size: 40px;
+    }
+
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(226, 226, 226);
+
+    // width: 800px;
+    margin: 3%;
+    // transition: all .3s ease-in-out;
+
+    // &__formField {
+    //     max-width: 270px;
+    // }
+
+    @media screen and (max-width: 800px) {
+        width: 90%;
+    }
+
+
+    
+}
+
+.cardContainer__arriba, .cardContainer__abajo, .cardContainer__abajo__btn{
+    width: 100%;
+    padding: 2%;
+    color: $primary;
+    
+
+}
+
+.cardContainer__arriba{
+    display: flex;
+    background-color: #edededad;
+    justify-content: space-between;
+
+
+
+    &__txt{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-content: center;
+    }
+
+    &__titu{
+        font-family: "Alone";
+        font-size: 25px;
+    }
+}
+
+.cardContainer__abajo{
+
+    display: flex;
+
+    &__txt{
+        display: flex;
+        flex-direction: column;
+
+        
+    }
+
+    &__titu{
+        font-family: "Alone";
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    &__img{
+        width: 55%;
+    }
+
+    &__cabezal{
+        display: flex;
+        
+        &__izq{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__der{
+            width: 50%;
+
+        }
+    }
+
+    &__cuerpo{
+        display: flex;
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+}
+
+.abajo2{
+    flex-direction: column;
+}
+
+
+
+.btn-modificar {
+    border: 1px solid $primary;
+    background-color: #fff;
+    color: $primary;
+    margin-top: 22px;
+    padding: 1px 10px;
+}
+
+/*--------------------MODIFICADORES------------------------*/
+
+.cardContainer__modifer{
+    width: 25%;
+}
+
+.nombreAlcohol__modifer{
+    justify-content: center;
+}
+
+.numero__modifer{
+    justify-content: center;
+    text-align: center;
+}
+
+/*---------------------------BREAKPOINTS--------------------*/
+
+@media only screen and (max-width: 830px) {
+    .cardContainer__arriba{
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .cardContainer{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cardContainer__abajo{
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .cardContainer__modifer{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 472px) {
+
+    .cardContainer{
+        flex-direction: column;
+    }
+    .cardContainer__arriba{
+        width: 100%;
+    }
+ .cardContainer__abajo{
+        width: 100%;
+    }
+
+}

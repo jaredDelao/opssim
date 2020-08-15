@@ -7,7 +7,7 @@
         <p class="information__text-direction text-color mt-4"><b>Dirección</b></p>
         <mat-divider></mat-divider>
 
-        <div class="form-group mt-3">
+        <div class="form-group mt-3" *ngIf="!isLogged">
 
             <mat-vertical-stepper linear="true" #stepper>
                 <mat-step [stepControl]="formPersonal">
@@ -122,6 +122,10 @@
 
         </div>
 
+        <div class="directions-logged form-group mt-3" *ngIf="isLogged">
+
+        </div>
+
     </div>
 
 
@@ -184,7 +188,7 @@
 
             <!-- actions -->
             <div class="order__actions mt-4">
-                <button mat-raised-button color="accent">Regresar al carrito</button>
+                <button mat-raised-button color="accent" (click)="getOrders()" routerLink="/cart">Regresar al carrito</button>
                 <button mat-raised-button color="primary" (click)="confirmOrder()">Confirmar pedido</button>
             </div>
 

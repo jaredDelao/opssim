@@ -24,9 +24,9 @@ export class WishlistService {
   }
 
   addWishlist(idProduct: string) {
-    let idUser = this._userService.getIdUser();
-    if (!idUser) return;
-    return this.http.put(environment.url + `AgregaWishlist?iIdCliente=${idUser}&iIdProducto=${idProduct}`, {})
+    // let idUser = this._userService.getIdUser();
+    // if (!idUser) return;
+    // return this.http.put(environment.url + `contacto?iIdUsuario=1&sCaptcha=12345&sMensaje=Hola a todos`, {})
   }
 
   deleteWishlist(idProduct: string) {

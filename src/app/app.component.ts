@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(private _sidenavService: SidenavService, private testService: TestService) {} 
 
   ngOnInit(): void {
-    this.testService.test().subscribe(console.log)
+    // this.testService.test().subscribe(console.log)
   }
   
   ngAfterViewInit() {

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { OrderResponse, Order } from '../models/order.model';
 import { pluck, catchError } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +33,7 @@ export class OrderService {
   // }
 
   createOrder(idCliente: string, pedido: string): Observable<OrderResponse> {
-    return this.http.put<OrderResponse>(environment.url + `CreaPedido?iIdCliente=${idCliente}&sDetallePedido=${pedido}`, {}).pipe(
+    return this.http.get<OrderResponse>(environment.url + `CreaPedido?iIdCliente=${idCliente}&sDetallePedido=${pedido}`, {}).pipe(
       pluck('resultDto'),
       catchError<OrderResponse, Observable<OrderResponse>>((e) => of({iResultado: false, sDetalle: null}))
     )

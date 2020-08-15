@@ -26,7 +26,7 @@ export class CartService {
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
     this.cartItems.subscribe(_products => _products = products);
 
-    console.log('localStorage::',products);
+    console.log('Cart::', products);
     
   }
 

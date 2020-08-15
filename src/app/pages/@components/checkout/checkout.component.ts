@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { CreateOrder } from 'src/app/models/order.model';
 import { switchMap } from 'rxjs/operators';
 import { OrderService } from 'src/app/services/order.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-checkout',
@@ -18,10 +19,15 @@ export class CheckoutComponent implements OnInit {
   formDirection: FormGroup;
   formComplement: FormGroup;
 
-  constructor(private fb: FormBuilder, private _cartService: CartService, private _orderService: OrderService) { }
+  isLogged: boolean = true;
+
+  constructor(private fb: FormBuilder, private _cartService: CartService, private _orderService: OrderService,
+    private _wishlistService: WishlistService) { }
 
   ngOnInit() {
     this.formInit();
+
+    // this._wishlistService.addWishlist('1').subscribe(console.log)
   }
 
   formInit() {
@@ -66,15 +72,11 @@ export class CheckoutComponent implements OnInit {
         let order = new CreateOrder(1, 'José', total, products);
         const base64 = btoa(JSON.stringify(order));
         return this._orderService.createOrder('1', base64)
-      })
-    ).subscribe((resp) => {
-      
-      console.log(resp);
-      
-      
-    })
-
-    
+      })).subscribe((resp) => {
+      if (resp.iResultado == 'Ok') {
+        alert('Pedido creado')
+      }
+    }, (err) => alert(err)) 
   }
 
 }

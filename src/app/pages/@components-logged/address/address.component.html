@@ -4,7 +4,11 @@
 
 <div class="container__cards">
 
-    <div class="cardtextual">
+    <div class="container__btn-crear text-right">
+        <button mat-raised-button color="primary" (click)="openDialog()">Nueva dirección</button>
+    </div>
+
+    <div class="cardtextual" *ngFor="let address of adressList">
 
 
         <div class="cardtextual__arriba">
@@ -19,10 +23,10 @@
                 <span>PEDRO ROMERO HERRERA</span>
                 <span class="cardtextual__abajo__titu">DIRECCIÓN</span>
                 <div class="cardtextual__abajo__izq__dir">
-                    <span>avenida lote manzano fgsdgsdgsdf gsdfgsdf sdfgdfgdfsd fsdfsgsdgsdfgsdg sdfgsdfgsdf gsdf</span>
-                    <span>BOSQUES PERINORTE</span>
-                    <span>CUATITLAN IZCA</span>
-                    <span>Mexico</span>
+                    <span>{{ address.sCalle }} {{ address.sNumeroInterior }}, {{ address.sNumeroExterior }}</span>
+                    <span>{{ address.sColonia }}</span>
+                    <span>{{ address.sDelegacion }}</span>
+                    <span>{{ address.sEstado }}, {{ address.iCodigoPostal }}</span>
                 </div>
             </div>
 

@@ -5,7 +5,10 @@ export interface Order {
     dFechaEntrega: number,
     dFechaPedido: number,
     dTotal: number,
-    ItemsCart: Array<ItemCartOrder>
+    ItemsCart: Array<ItemCartOrder>,
+    sEstatus?: string,
+    sNoPedido?: string,
+    sPersonaRecibe?: string,
 }
 
 export interface ItemCartOrder {

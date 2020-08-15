@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Registrar dirección</h1>
+<div mat-dialog-content>
+  
+    <div class="row" [formGroup]="form">
+
+        <mat-form-field class="col-md-12">
+          <mat-label>Calle:</mat-label>
+          <input matInput formControlName="sCalle" >
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label>Número interior:</mat-label>
+          <input matInput formControlName="sNumeroInterior" >
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label>Número exterior</mat-label>
+          <input matInput formControlName="sNumeroExterior" >
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label>Código postal</mat-label>
+          <input matInput formControlName="iCodigoPostal" >
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label>Colonia</mat-label>
+          <input matInput formControlName="sColonia" >
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label>Delegación / Municipio</mat-label>
+          <input matInput formControlName="sDelegacion" >
+        </mat-form-field>
+
+        <mat-form-field class="col-md-6">
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="sEstado" >
+        </mat-form-field>
+
+    </div>
+
+</div>
+
+<div mat-dialog-actions>
+    <div class="col-12 d-flex justify-content-end">
+        <button mat-raised-button class="btn-cancel" color="warn" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button color="primary" cdkFocusInitial (click)="agregar()">Agregar</button>
+    </div>
+</div>

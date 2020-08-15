@@ -71,7 +71,7 @@ export class CheckoutComponent implements OnInit {
       switchMap((total: number) => {
         let order = new CreateOrder(1, 'José', total, products);
         const base64 = btoa(JSON.stringify(order));
-        return this._orderService.createOrder('1', base64)
+        return this._orderService.createOrder(base64)
       })).subscribe((resp) => {
       if (resp.iResultado == 'Ok') {
         alert('Pedido creado')

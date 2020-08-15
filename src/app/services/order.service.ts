@@ -4,13 +4,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { OrderResponse, Order } from '../models/order.model';
 import { pluck, catchError } from 'rxjs/operators';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _userService: UserService) { }
 
   // {
   //   "iIdDireccion": 1,
@@ -32,14 +33,16 @@ export class OrderService {
   
   // }
 
-  createOrder(idCliente: string, pedido: string): Observable<OrderResponse> {
+  createOrder(pedido: string): Observable<OrderResponse> {
+    const idCliente = this._userService.getIdUser();
     return this.http.get<OrderResponse>(environment.url + `CreaPedido?iIdCliente=${idCliente}&sDetallePedido=${pedido}`, {}).pipe(
       pluck('resultDto'),
       catchError<OrderResponse, Observable<OrderResponse>>((e) => of({iResultado: false, sDetalle: null}))
     )
   }
 
-  getOrder(idCliente: string): Observable<Order[]> {
+  getOrder(): Observable<Order[]> {
+    const idCliente = this._userService.getIdUser();
     return this.http.get<Order[]>(environment.url + `GetPedidosCte?iIdCliente=${idCliente}`).pipe(
       pluck('resultDto', 'sDetalle'),
       catchError<Order[], Observable<Order[]>>((e) => of([]))

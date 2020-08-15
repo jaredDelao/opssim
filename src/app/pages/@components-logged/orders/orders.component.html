@@ -3,28 +3,26 @@
 </div>
 
 
-<div class="cardContainer">
-
-
+<div class="cardContainer" *ngFor="let order of orderList">
     <div class="cardContainer__arriba">
 
         <div class="cardContainer__arriba__txt">
             <span class="cardContainer__arriba__titu">PEDIDO REALIZADO</span>
-            <span>23 DE JULIO DE 2020</span>
+            <span>{{ order.dFechaPedido  | date }}</span>
         </div>
 
         <div class="cardContainer__arriba__txt">
             <span class="cardContainer__arriba__titu">TOTAL</span>
-            <span>$760</span>
+            <span>{{ order.dTotal | currency }}</span>
         </div>
 
         <div class="cardContainer__arriba__txt">
             <span class="cardContainer__arriba__titu">ENVIAR A</span>
-            <span>PEDRO ROMERO</span>
+            <span>{{ order.sPersonaRecibe }}</span>
         </div>
 
         <div class="cardContainer__arriba__txt">
-            <span>PEDIDO N.º702-9583193-6712258</span>
+            <span>PEDIDO N.º {{ order.sNoPedido }}</span>
         </div>
 
     </div>
@@ -54,85 +52,5 @@
                 COMPRAR NUEVAMENTE
             </button>
         </div>
-
-
-
-    </div>
-
-    
-
-
-</div>
-
-
-<div class="cardContainer">
-
-
-    <div class="cardContainer__arriba">
-
-        <div class="cardContainer__arriba__txt">
-            <span class="cardContainer__arriba__titu">PEDIDO REALIZADO</span>
-            <span>23 DE JULIO DE 2020</span>
-        </div>
-
-        <div class="cardContainer__arriba__txt">
-            <span class="cardContainer__arriba__titu">TOTAL</span>
-            <span>$760</span>
-            <span class="cardContainer__arriba__titu spaNum">CANTIDAD</span>
-            <span class="spaNum">1</span>
-        </div>
-
-        <div class="cardContainer__arriba__txt">
-            <span class="cardContainer__arriba__titu">ENVIAR A</span>
-            <span>PEDRO ROMERO</span>
-        </div>
-
-        <div class="cardContainer__arriba__txt">
-            <span>PEDIDO N.º702-9583193-6712258</span>
-        </div>
-
-    </div>
-
-
-    <div class="cardContainer__abajo abajo2">
-
-        <div class="cardContainer__abajo__cabezal">
-            <div class="cardContainer__abajo__cabezal__izq">
-                <span>ENTREGADO 28-07-20</span>
-                <span class="cardContainer__abajo__titu">ENTREGADO</span>
-            </div>
-
-            <div class="cardContainer__abajo__cabezal__der">
-                <span class="cardContainer__abajo__titu">PAQUECONVIVAS</span>
-            </div>
-        </div>
-
-
-        <div class="cardContainer__abajo__cuerpo">
-
-            <div class="cardContainer__abajo__txt cardContainer__modifer numero__modifer">
-                <span> 1</span>
-            </div>
-
-            <div class="cardContainer__abajo__txt cardContainer__modifer">
-
-                <img class="cardContainer__abajo__img" src="../.././../../assets/images/demo/botella1.jpg" alt="">
-
-            </div>
-
-
-            <div class="cardContainer__abajo__txt nombreAlcohol__modifer">
-                <span>Vodka Smirnoff Tamarindo 750 ml</span>
-               
-            </div>
-
-        </div>
-    </div>
-
-    
-    <div class="cardContainer__abajo__btn">
-        <button mat-raised-button type="button" class="btn-modificar">
-            COMPRAR NUEVAMENTE
-        </button>
     </div>
 </div>

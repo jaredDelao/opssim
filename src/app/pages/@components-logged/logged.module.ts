@@ -14,19 +14,28 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AddressModalComponent } from './@modals/address-modal/address-modal.component';
 
-const components = [AccountMenuComponent, BillsComponent];
+const components = [
+  AccountMenuComponent, 
+  BillsComponent, 
+  AddBillComponent,
+  WishlistComponent,
+  ProfileComponent,
+  AddressComponent,
+  OrdersComponent,
+  AddressModalComponent
+];
 const directives = [UppercaseDirective];
+const modals = [
+  AddressModalComponent
+]
 // const pipes = [StockSelectPipe];
 @NgModule({
   declarations: [
     ...components,
     ...directives,
-    AddBillComponent,
-    WishlistComponent,
-    ProfileComponent,
-    AddressComponent,
-    OrdersComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -38,6 +47,9 @@ const directives = [UppercaseDirective];
   exports: [
     // ...components
   ],
+  entryComponents: [
+    ...modals
+  ]
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 })

@@ -126,20 +126,28 @@
     flex-direction: column;
 }
 
+.cardContainer__abajo__productosContainer__list {
+    display: flex;
+    margin-bottom: 25px;
+}
 
+.botonContainer {
+    display: flex;
+    justify-content: center;
+}
 
 .btn-modificar {
     border: 1px solid $primary;
     background-color: #fff;
     color: $primary;
-    margin-top: 22px;
+    margin: 22px 0;
     padding: 1px 10px;
 }
 
 /*--------------------MODIFICADORES------------------------*/
 
 .cardContainer__modifer{
-    width: 25%;
+    width: 300px;
 }
 
 .nombreAlcohol__modifer{
@@ -160,27 +168,19 @@
 /*---------------------------BREAKPOINTS--------------------*/
 
 @media only screen and (max-width: 830px) {
-    .cardContainer__arriba{
-        flex-direction: column;
-        width: 50%;
-    }
 
-    .cardContainer{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+    .cardContainer__modifer{
+        width: initial;
+    }    
 
     .cardContainer__abajo{
         flex-direction: column;
-        width: 50%;
     }
 
-    .cardContainer__modifer{
-        width: 100%;
-    }
+    
 
     .cardContainer__abajo__img{
-        width: 70px;
+        width: 150px;
     }
 }
 
@@ -203,7 +203,18 @@
         display: block;
     }
     .cardContainer__abajo__img{
-        width: 55%;
+        width: none;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .cardContainer__arriba__titu, .cardContainer__abajo__titu{
+        font-size: 15px;
+    }
+
+    span{
+        font-size: 10px;
     }
 
 }

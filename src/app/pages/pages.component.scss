@@ -96,6 +96,8 @@
 
   &:hover &__content {
     display: block;
+    z-index: 99;
+
   }
 
   &__item {

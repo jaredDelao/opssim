@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://34.234.225.159:8080/RestFull_ECOMMERCE-1.0/rest/ECOMMERCE/',
+  url: 'https://back.laveronesaonline.com/services/',
   secretKey: 'laveronesasecretkeyonline'
 };
 

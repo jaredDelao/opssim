@@ -44,7 +44,8 @@
                     <div class="form-group tabla__select-precio">
                         <!-- <label for="sel1">Select :</label> -->
                         <select class="form-control" [formControlName]="'controlItem'+i" (change)="updateQuantity(item.itemCart, $event.target.value)">
-                            <option *ngFor="let count of counter | stockSelect: item.quantity" [value]="count">{{count}}
+                            <!-- <option *ngFor="let count of counter | stockSelect: item.quantity" [value]="count">{{count}} -->
+                            <option *ngFor="let count of counter" [value]="count">{{count}}
                             </option>
                         </select>
                     </div>
@@ -83,7 +84,7 @@
                                 <div class="form-group tabla__select-precio">
                                     <!-- <label for="sel1">Select :</label> -->
                                     <select class="form-control" [formControlName]="'controlItem'+i">
-                                        <option *ngFor="let count of counter | stockSelect: item.quantity" [value]="count">
+                                        <option *ngFor="let count of counter" [value]="count">
                                             {{count}}</option>
                                     </select>
                                 </div>

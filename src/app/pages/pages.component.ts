@@ -66,7 +66,13 @@ export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
 
   getCategories() {
     this._productsService.getCategorias().pipe(takeUntil(this.$unsubscribe)).subscribe(categorias => {
-      this.categoriesList = categorias;
+      this.categoriesList = categorias.reduce((acc, cat) => {
+        debugger
+        if (!(cat.sNombreCategoria.includes('pqt_'))) {
+          acc.push(cat);
+        }
+        return acc;
+      }, [])
     })
   }
 

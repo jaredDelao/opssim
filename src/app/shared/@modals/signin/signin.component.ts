@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { UserService } from 'src/app/services/user.service';
 import * as cryptoJS from 'crypto-js';
 import { environment } from 'src/environments/environment';
+import Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-signin',
@@ -33,18 +34,22 @@ export class SigninComponent implements OnInit {
 
   ingresar() {
     this._userService.signIn(this.form.getRawValue()).subscribe((resp) => {
-      console.log(resp);
+      // console.log(resp);
       const { iIdUsuario, sToken, error } = resp;
 
-      if (error) return alert('Ha ocurrido un error, vuelve a intentarlo');
+      if (error) return Swal.fire('Alerta', 'Ha ocurrido un error', 'error')
 
       if (iIdUsuario === 0) {
-        return alert('Las credenciales son incorrectas');
+        return Swal.fire('Alerta', 'Las credenciales son incorrectas', 'error');
       }
       let idUsuarioEncrypt = cryptoJS.AES.encrypt(iIdUsuario.toString(), environment.secretKey).toString();
 
       localStorage.setItem('token', sToken);
       localStorage.setItem('idUsuario', idUsuarioEncrypt);
+
+      Swal.fire('', 'Inicio de sesión exitoso', 'success').then(() => {
+        window.location.reload();
+      })
 
     })
   }

@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   form: FormGroup;
 
-  counter: Array<number> = [1,2,3,4];
+  counter: Array<number> = [1,2,3,4, 5, 6, 7, 8];
   selectNumer: boolean = false;
 
   itemsDummy = [

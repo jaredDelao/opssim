@@ -37,52 +37,17 @@
         </div>
 
         <div class="cardContainer__abajo__productosContainer">
-            <div class="cardContainer__abajo__productosContainer__list">
+
+            <div class="cardContainer__abajo__productosContainer__list" *ngFor="let item of order.ItemsCart">
                 <div class="cardContainer__abajo__txt cardContainer__modifer">
 
-                    <img class="cardContainer__abajo__img" src="../.././../../assets/images/demo/botella1.jpg" alt="">
+                    <img class="cardContainer__abajo__img" [src]="item.sUrlImagen" alt="">
     
                 </div>
     
     
                 <div class="cardContainer__abajo__txt">
-                    <span class="cardContainer__abajo__titu">PAQUECONVIVAS</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                </div>
-            </div>
-
-
-            <div class="cardContainer__abajo__productosContainer__list">
-                <div class="cardContainer__abajo__txt cardContainer__modifer">
-
-                    <img class="cardContainer__abajo__img" src="../.././../../assets/images/demo/botella1.jpg" alt="">
-    
-                </div>
-    
-    
-                <div class="cardContainer__abajo__txt">
-                    <span class="cardContainer__abajo__titu">PAQUECONVIVAS</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                </div>
-            </div>
-
-            <div class="cardContainer__abajo__productosContainer__list">
-                <div class="cardContainer__abajo__txt cardContainer__modifer">
-
-                    <img class="cardContainer__abajo__img" src="../.././../../assets/images/demo/botella1.jpg" alt="">
-    
-                </div>
-    
-    
-                <div class="cardContainer__abajo__txt">
-                    <span class="cardContainer__abajo__titu">PAQUECONVIVAS</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
-                    <span>Vodka Smirnoff Tamarindo 750 ml</span>
+                    <span class="cardContainer__abajo__titu">{{ item.sNombreProducto}}</span>
                 </div>
             </div>
             

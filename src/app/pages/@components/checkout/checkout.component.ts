@@ -7,6 +7,10 @@ import { CreateOrder } from 'src/app/models/order.model';
 import { switchMap } from 'rxjs/operators';
 import { OrderService } from 'src/app/services/order.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
+import { AddressService } from 'src/app/services/address.service';
+import { Address } from 'src/app/models/address.model';
+import { MatDialog } from '@angular/material';
+import { SelectAddressModalComponent } from '../../@components-logged/@modals/select-address-modal/select-address-modal.component';
 
 @Component({
   selector: 'app-checkout',
@@ -21,11 +25,15 @@ export class CheckoutComponent implements OnInit {
 
   isLogged: boolean = true;
 
+  addressDefault: Address;
+  idAddress: string = null;
+
   constructor(private fb: FormBuilder, private _cartService: CartService, private _orderService: OrderService,
-    private _wishlistService: WishlistService) { }
+    private _addressService: AddressService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.formInit();
+    this.getAddressDefault();
 
     // this._wishlistService.addWishlist('1').subscribe(console.log)
   }
@@ -77,6 +85,26 @@ export class CheckoutComponent implements OnInit {
         alert('Pedido creado')
       }
     }, (err) => alert(err)) 
+  }
+
+
+  getAddressDefault() {
+    this._addressService.getAddress().subscribe((resp) => {
+      if (resp.length > 0) {
+        this.addressDefault = resp[0];
+      }
+    })
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(SelectAddressModalComponent, {
+      maxWidth: '700px',
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.idAddress = result;
+    });
   }
 
 }

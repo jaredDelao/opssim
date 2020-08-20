@@ -124,3 +124,28 @@
     }
 
 }
+
+
+::ng-deep.mat-chip-list-wrapper {
+    justify-content: flex-end;
+}
+
+.text-color {
+    font-weight: 500;
+}
+
+.text-black {
+    color: #000
+}
+
+.card-direction {
+    p {
+        font-size: 14px;
+        line-height: 10px;
+    }
+
+    mat-card-title {
+        display: flex;
+        justify-content: space-between;
+    }
+}

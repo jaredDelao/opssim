@@ -124,6 +124,26 @@
 
         <div class="directions-logged form-group mt-3" *ngIf="isLogged">
 
+            <mat-card class="card-direction mat-elevation-z7" *ngIf="addressDefault">
+                <mat-card-title class="mb-3">
+                    <mat-icon color="primary">place</mat-icon>
+                    <mat-chip-list>
+                        <mat-chip color="primary" selected>Predeterminada</mat-chip>
+                    </mat-chip-list>
+                </mat-card-title>
+                <p><span class="text-color">Calle: </span>{{ addressDefault?.sCalle }}</p>
+                <p *ngIf="addressDefault.sNumeroInterior && addressDefault.sNumeroInterior != 'null'"> <span class="text-color">No. Interior: </span> {{ addressDefault.sNumeroInterior }}</p>
+                <p> <span class="text-color">Número Exterior: </span>{{ addressDefault?.sNumeroExterior}}</p>
+                <p><span class="text-color">Colonia: </span>{{ addressDefault?.sColonia }}</p>
+                <p><span class="text-color">Delegación: </span>{{ addressDefault?.sDelegacion }}</p>
+                <p><span class="text-color">Estado: </span>{{ addressDefault?.sEstado }}</p>
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="text-black" mat-raised-button color="warn" (click)="openDialog()">Otra dirección</button>
+                </div>
+            </mat-card>
+
+
+
         </div>
 
     </div>

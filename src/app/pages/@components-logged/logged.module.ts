@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddressComponent } from './address/address.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AddressModalComponent } from './@modals/address-modal/address-modal.component';
+import { SelectAddressModalComponent } from './@modals/select-address-modal/select-address-modal.component';
 
 const components = [
   AccountMenuComponent, 
@@ -34,8 +35,7 @@ const modals = [
 @NgModule({
   declarations: [
     ...components,
-    ...directives,
-    
+    ...directives,    
   ],
   imports: [
     CommonModule,

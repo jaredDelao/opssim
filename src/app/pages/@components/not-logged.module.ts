@@ -21,8 +21,9 @@ import { StockSelectPipe } from 'src/app/shared/pipes/stock-select.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsComponent } from './products/products.component';
+import { SelectAddressModalComponent } from '../@components-logged/@modals/select-address-modal/select-address-modal.component';
 
-const modals = [SigninComponent, SignupComponent];
+const modals = [SelectAddressModalComponent];
 @NgModule({
   declarations: [
     HomeComponent,
@@ -31,6 +32,7 @@ const modals = [SigninComponent, SignupComponent];
     CheckoutComponent,
     MenuOcasionComponent,
     ProductsComponent,
+    SelectAddressModalComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +44,7 @@ const modals = [SigninComponent, SignupComponent];
     ModalsModule,
     SharedModule,
   ],
+  entryComponents: [modals],
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     {

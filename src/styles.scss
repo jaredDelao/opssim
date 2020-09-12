@@ -10,8 +10,8 @@ $custom-collection: (
     warning: #fff,
     success: #ffffff,
     danger: #ffffff,
-    primary: #ffffff,
-    extra: #ffffff,
+    primary: #000000,
+    extra: #000000,
   ),
 );
 // Custom Theming for Angular Material
@@ -27,22 +27,22 @@ $custom-collection: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$front-veronesa-primary: mat-palette($custom-collection, primary);
-$front-veronesa-accent: mat-palette($custom-collection, extra);
+$opssim-primary: mat-palette($custom-collection, primary);
+$opssim-accent: mat-palette($custom-collection, extra);
 
 // The warn palette is optional (defaults to red).
-$front-veronesa-warn: mat-palette($custom-collection, warning);
+$opssim-warn: mat-palette($custom-collection, warning);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$front-veronesa-theme: mat-light-theme(
-  $front-veronesa-primary,
-  $front-veronesa-accent,
-  $front-veronesa-warn
+$opssim-theme: mat-light-theme(
+  $opssim-primary,
+  $opssim-accent,
+  $opssim-warn
 );
 
-@mixin mix-app-theme($front-veronesa-theme) {
-  $primary: map-get($front-veronesa-theme, primary);
-  $accent: map-get($front-veronesa-theme, accent);
+@mixin mix-app-theme($opssim-theme) {
+  $primary: map-get($opssim-theme, primary);
+  $accent: map-get($opssim-theme, accent);
 
   .mat-button-toggle {
     background-color: #ccc;
@@ -56,12 +56,12 @@ $front-veronesa-theme: mat-light-theme(
 }
 
 // Include the mixin
-@include mix-app-theme($front-veronesa-theme);
+@include mix-app-theme($opssim-theme);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($front-veronesa-theme);
+@include angular-material-theme($opssim-theme);
 
 /* You can add global styles to this file, and also import other style files */
 

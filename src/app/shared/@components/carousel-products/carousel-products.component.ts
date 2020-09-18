@@ -26,14 +26,12 @@ export class CarouselProductsComponent implements OnInit {
   }
 
   slidesStore: any[] = [
-    { id: '1', src: '../../../../assets/images/demo/DonPedroGranRva600x800.jpg' },
-    { id: '2', src: '../../../../assets/images/demo/azteca_oro_600x800.jpg' },
-    { id: '3', src: '../../../../assets/images/demo/botella3.jpg' },
-    { id: '4', src: '../../../../assets/images/demo/botella4.jpg' },
-    { id: '5', src: '../../../../assets/images/demo/botella1.jpg' },
-    { id: '6', src: '../../../../assets/images/demo/botella2.jpg' },
-    { id: '7', src: '../../../../assets/images/demo/botella3.jpg' },
-    { id: '8', src: '../../../../assets/images/demo/botella4.jpg' }
+    { id: '1', src: 'https://opssim.com/images/thumbs/0000206_alejo_415.jpeg' },
+    { id: '2', src: 'https://opssim.com/images/thumbs/0000203_circe_415.jpeg' },
+    { id: '3', src: 'https://opssim.com/images/thumbs/0000221_orion_415.jpeg' },
+    { id: '4', src: 'https://opssim.com/images/thumbs/0000224_poseidon_415.jpeg' },
+    { id: '5', src: 'https://opssim.com/images/thumbs/0000227_urano_415.jpeg' },
+    { id: '6', src: 'https://opssim.com/images/thumbs/0000216_olimpo-plus_415.jpeg' },
   ]
 
 

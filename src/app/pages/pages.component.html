@@ -1,7 +1,23 @@
-<mat-toolbar class="toolbar-logo">
-    <img class="toolbar-logo__img" src="assets/images/0000257_logo largo-01.png" alt="laveronesaonline.com" routerLink="/">
+<!-- Menu superior -->
+<mat-toolbar class="toolbar-menu-superior">
+
+
 </mat-toolbar>
 
+<mat-toolbar class="toolbar-logo">
+
+    <img class="toolbar-logo__img" src="assets/images/logo_largo-opssim.png" alt="opssim.com" routerLink="/">
+
+    <div class="input-group col-4">
+        <input type="text" class="form-control" placeholder="¡Hola! ¿Qué estas buscando?">
+        <div class="input-group-prepend">
+          <mat-icon>search</mat-icon>
+        </div>
+    </div>
+</mat-toolbar>
+
+
+<!-- Menu -->
 <mat-toolbar class="toolbar-menu">
 
     <div class="toolbar-menu__left"> </div>
@@ -22,7 +38,6 @@
 
     <div class="toolbar-menu__right">
         <!-- menu user -->
-        <!-- <button mat-button class="toolbar-menu__button" [matMenuTriggerFor]="beforeMenu">Before</button> -->
 
         <img class="toolbar-menu__img-icon" matRipple src="../../assets/images/svg/user.svg"
             [matMenuTriggerFor]="beforeMenu">

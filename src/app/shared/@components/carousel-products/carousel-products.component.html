@@ -1,0 +1,27 @@
+ <!-- slider -->
+ <owl-carousel-o [options]="customOptions" class="carousel">
+        
+    <ng-container *ngFor="let slide of slidesStore">
+        <ng-template carouselSlide [id]="slide.id">
+            <mat-card class="carousel__card mat-elevation-z5">
+                <img [src]="slide.src">
+                <div class="carousel__icons">
+                    <div class="carousel__text">
+                        <span>Rose wines 750 ml</span>
+                        <div class="carousel__icons-box">
+                            <!-- price -->
+                            <span class="text-color">$241.00</span>
+                            <!-- images -->
+                            <div class="carousel__images">
+                                <img matTooltip="Agregar whishlist" src="../../../../assets/images/svg/favorito.svg" alt="" class="mr-2">
+                                <img matTooltip="Agregar al carrito" src="../../../../assets/images/svg/cart.svg" alt="" class="mr-2">
+                                <img matTooltip="Agregar Whishlist" src="../../../../assets/images/svg/etiqueta.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </ng-template>
+    </ng-container>
+  
+  </owl-carousel-o>

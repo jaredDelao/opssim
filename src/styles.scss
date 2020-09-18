@@ -6,12 +6,14 @@ $custom-collection: (
   danger: #c00000,
   primary: $primary,
   extra: $extra,
+  warn: #ffc116,
   contrast: (
-    warning: #fff,
+    warning: #000,
     success: #ffffff,
     danger: #ffffff,
     primary: #000000,
     extra: #000000,
+    warn: #000000,
   ),
 );
 // Custom Theming for Angular Material

@@ -7,6 +7,7 @@
     <div class="toolbar-menu__left"> </div>
 
     <div class="toolbar-menu__center">
+        <button mat-raised-button color="warn" class="btn-goggles">GOGGLES</button>
         <button class="toolbar-menu__button" mat-button [matMenuTriggerFor]="categorias" >PRODUCTOS</button>
         <button class="toolbar-menu__button" mat-button *ngFor="let btn of buttons" [routerLink]="[btn.link]"
             routerLinkActive="router-link-active">{{ btn.name | uppercase }}</button>

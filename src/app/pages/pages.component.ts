@@ -22,9 +22,10 @@ export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
 
   buttons: Array<any> = [
     // { path: '/productos', name: 'Productos', link: '/product-detail'},
-    { path: '/paquetes', name: 'Paquetes', link: '/'},
-    { path: '/ocasion', name: 'Para la ocasión', link: '/menu-ocasion'},
-    { path: '/contacto', name: 'Contactanos', link: '/'},
+    { path: '/paquetes', name: 'Lentes', link: '/'},
+    { path: '/ocasion', name: 'Promociones', link: '/menu-ocasion'},
+    { path: '/contacto', name: 'Tips', link: '/'},
+    { path: '/contacto', name: 'Sucursales', link: '/'},
   ];
 
   itemsDummy = [

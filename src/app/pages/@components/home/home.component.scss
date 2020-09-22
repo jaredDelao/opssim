@@ -14,6 +14,10 @@
 
 .carusel__contenedor{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
     & .titu {
         font-size: 30px;

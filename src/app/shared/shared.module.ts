@@ -6,6 +6,10 @@ import { CarouselProductsComponent } from './@components/carousel-products/carou
 import { MaterialModule } from '../material.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
+
 const pipes = [StockSelectPipe]
 const components = [FooterComponent, CarouselProductsComponent]
 @NgModule({
@@ -14,7 +18,8 @@ const components = [FooterComponent, CarouselProductsComponent]
     CommonModule,
     MaterialModule,
     CarouselModule,
+    NgbModule
   ],
-  exports: [...pipes, ...components],
+  exports: [...pipes, ...components, NgbModule],
 })
 export class SharedModule { }

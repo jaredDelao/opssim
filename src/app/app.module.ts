@@ -15,6 +15,8 @@ import { ModalsModule } from './shared/@modals/modals.module';
 import { PagesComponent } from './pages/pages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 const pipes = [StockSelectPipe];
 const modals = [SigninComponent, SignupComponent];
@@ -31,6 +33,7 @@ const modals = [SigninComponent, SignupComponent];
     ReactiveFormsModule,
     MaterialModule,
     ModalsModule,
+    // NgbModule,
   ],
   providers: [...pipes],
   bootstrap: [AppComponent],

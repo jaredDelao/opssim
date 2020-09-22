@@ -25,7 +25,7 @@ export class PagesComponent implements OnInit,AfterViewInit, OnDestroy {
     { path: '/paquetes', name: 'Lentes', link: '/'},
     { path: '/ocasion', name: 'Promociones', link: '/menu-ocasion'},
     { path: '/contacto', name: 'Tips', link: '/'},
-    { path: '/contacto', name: 'Sucursales', link: '/'},
+    { path: '/', name: 'Sucursales', link: '/menu-ocasion'},
   ];
 
   itemsDummy = [

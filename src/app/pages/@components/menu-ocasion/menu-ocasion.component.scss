@@ -116,4 +116,179 @@
 
     
 }
+/*--------------------------------------------------------SUCURSAles--------------------------------------*/
 
+.box-header {
+	display: flex; 
+	flex-direction: row; 
+	justify-content: space-between; 
+	margin-top: 3%;
+	flex-wrap: wrap;
+}
+
+.box-veracruz {
+	display: block;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	background-color: transparent;
+	margin-bottom: 3%;
+}
+
+.box-tabasco {
+	display: block;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 3%;
+	background-color: transparent;
+}
+
+
+.content-box, .box-map {
+	width: 50%;
+	padding: 2% 0%;
+	/* padding-left: 5%;*/
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	justify-content: center;
+
+}
+
+.p-title {
+	font-size: 3.3em;
+	font-weight: 600;
+}
+
+.icon {
+	width: 100%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.icon img {
+	width: 18%;
+}
+
+.content-box p {
+	margin: 12px 0;
+}
+
+.img-sucursal img {
+	width: 40%;
+}
+
+.map {
+	width: 100%;
+}
+
+.map iframe {
+	border-radius: 10px;
+	width: 100%;
+}
+
+
+@media screen and (max-width: 1055px) {
+	.p-title {
+		font-size: 2.8em;
+	}
+}
+
+@media only screen and (max-width: 763px) {
+	.box-veracruz, .box-tabasco {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content-box, .box-map {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.container-fotos {
+		flex-direction: column !important;
+		justify-content: center !important;
+		align-items: center;
+	}
+
+	.container-fotos .image-veracruz, .container-fotos .image-tabasco {
+		width: 80% !important;
+	}
+}
+
+.container-fotos {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.container-fotos .image-veracruz, .container-fotos .image-tabasco {
+	width: 40%;
+	margin: 15px 0;
+	text-align: center;
+}
+
+.container-fotos .image-veracruz img, .container-fotos .image-tabasco img {
+	width: 100%;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+	.box-header img {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.box-header img {
+		width: 40%;
+		height: 40%;
+	}
+}
+
+
+@media screen and (max-width: 1175px) {
+	.img-sucursal {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1060px) {
+	.box-header img {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+
+@media screen and (max-width: 763px) {
+	.box-header {
+		flex-direction: column;
+		justify-content: center;
+
+	}
+	.box-header img {
+		width: 60%;
+		height: 60%;
+		margin: 2% auto;	}
+}
+
+@media screen and (max-width: 600px) {
+	.contact-box {
+		flex-direction: column !important;
+	}
+
+}
+
+@media screen and (max-width: 650px) {
+	.video-home iframe {
+		width: 350px;
+		height: 200px;
+	}
+
+	
+}

@@ -39,12 +39,12 @@
     <div class="toolbar-menu__right">
         <!-- menu user -->
 
-        <img class="toolbar-menu__img-icon" matRipple src="../../assets/images/svg/user.svg"
+        <img class="toolbar-menu__img-icon" matRipple src="assets/images/svg/user.svg"
             [matMenuTriggerFor]="beforeMenu">
 
         <!-- float cart -->
         <div class="menuCart">
-            <img class="toolbar-menu__img-icon" matRipple src="../../assets/images/svg/cart-white.svg"
+            <img class="toolbar-menu__img-icon" matRipple src="assets/images/svg/cart-white.svg"
                 [routerLink]="['/cart']">
 
             <div class="menuCart__content">
@@ -111,8 +111,8 @@
     </button>
 
     <div class="toolbar-menu-responsive__actions">
-        <img matRipple src="../../assets/images/svg/user.svg" [matMenuTriggerFor]="beforeMenu">
-        <img matRipple src="../../assets/images/svg/cart-white.svg" [routerLink]="['/checkout']">
+        <img matRipple src="assets/images/svg/user.svg" [matMenuTriggerFor]="beforeMenu">
+        <img matRipple src="assets/images/svg/cart-white.svg" [routerLink]="['/checkout']">
 
         <mat-menu #beforeMenu="matMenu" xPosition="before">
             <button mat-menu-item (click)="openModal('signIn')">Iniciar sesión</button>

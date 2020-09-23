@@ -17,6 +17,7 @@
     color: #fff;
     justify-content: center;
   }
+
 }
 
 .toolbar-menu {
@@ -204,4 +205,17 @@
   .toolbar-menu {
     display: none;
   }
+}
+
+
+@media screen and (max-width: 950px) {
+  .toolbar-logo{
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+
+  .col-4{
+    max-width: 300px !important;
+  }
+
 }

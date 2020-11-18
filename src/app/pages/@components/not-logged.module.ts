@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsComponent } from './products/products.component';
 import { SelectAddressModalComponent } from '../@components-logged/@modals/select-address-modal/select-address-modal.component';
+import { TipsComponent } from './tips/tips.component';
 
 const modals = [SelectAddressModalComponent];
 @NgModule({
@@ -33,6 +34,7 @@ const modals = [SelectAddressModalComponent];
     MenuOcasionComponent,
     ProductsComponent,
     SelectAddressModalComponent,
+    TipsComponent,
   ],
   imports: [
     CommonModule,
